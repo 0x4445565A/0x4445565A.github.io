@@ -131,9 +131,26 @@
       padding: 2em;
       color: rgb(200, 200, 200);
       border: #141511 1px solid;
+      position: relative;
     }
     .editor-body h3 {
       color: #FFF;
+    }
+    .editor-body .editor-scroll {
+      width: 15px;
+      height: 100%;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.3);
+      top: 0;
+      right: 0;
+    }
+    .editor-body .editor-scroll .editor-scroll-scrub {
+      width: 11px;
+      height: 80%;
+      background: rgba(69, 69, 69, 0.8);
+      margin-left: 2px;
+      margin-top: 10px;
+      border-radius: 11px
     }
     .editor-header .editor-ui {
       display: inline;
@@ -243,8 +260,7 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
     PGP-Public: <a href="https://keybase.io/bmar/key.asc" target="_blank">BABCE3158E5BB764</a>
     SSH-RSA-Public: <a href="https://bmar.keybase.pub/keys/public_key" target="_blank">MD5:8F:DC:9D:60:71:F7</a>
   },
-};
-          </pre>
+};<div class="editor-scroll"><div class="editor-scroll-scrub"></div></div></pre>
           <div flex id="content">
             <h1>Projects</h1>
             <div layout="row" layout-wrap layout-align="center">
