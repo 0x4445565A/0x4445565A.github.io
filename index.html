@@ -113,7 +113,7 @@
     }
     .editor-body {
       background: #272822;
-      margin-top: 0;
+      margin: 0;
       padding: 2em;
       padding-top: 1px;
       padding-bottom: 1em;
@@ -163,6 +163,12 @@
     }
     .editor-header .editor-ui .ui-button.maximize {
       background: rgba(26, 175, 93, 0.3);
+    }
+    .editor-footer {
+      width: 100%;
+      height: 10px;
+      border-top: 1px solid #737373;
+      background: #575757;
     }
   .dark-primary-color    { background: #455A64 !important; }
   .default-primary-color { background: #607D8B !important; }
@@ -219,7 +225,7 @@
             </div>
             ~/About.json
           </div>
-          <pre class="editor-body md-whiteframe-1dp">
+          <pre class="editor-body">
 <span class="secondary-text-color">/**
  * This is my fancy pants portfolio.
  * If you like what you see...
@@ -257,6 +263,7 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
     SSH-RSA-Public: <a href="https://bmar.keybase.pub/keys/public_key" target="_blank">MD5:8F:DC:9D:60:71:F7</a>
   },
 };<div class="editor-scroll"><div class="editor-scroll-scrub"></div></div></pre>
+<div class="editor-footer md-whiteframe-1dp"></div>
           <div flex id="content">
             <h1>Projects</h1>
             <div layout="row" layout-wrap layout-align="center">
