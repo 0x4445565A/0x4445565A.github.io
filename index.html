@@ -83,36 +83,14 @@
     .push {
       padding-left: 3em;
     }
-    .project {
-      text-align: center;
-      border-radius: 3px;
-      border: 1px solid solid rgba(0, 47, 42, 0.8);
-      margin-bottom: 2em;
-    } 
-
-    .project hr {
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 47, 42, 0.2);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .project p {
-      padding: 1em;
-    }
-    .project h4 {
-      text-align: center;
-      width: 100%;
-      text-transform: uppercase;
-    }
-    .project > .md-button {
-      width:90%;
-    }
     md-card img.md-card-image {
       height: auto !important;
     }
     md-card-footer .md-button {
-      width: 100%;
+      width: 250px;
+    }
+    md-card h2 {
+      text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
     }
     md-card hr {
       border: 0;
@@ -128,7 +106,7 @@
       font-weight: bold;
       text-align: center;
       position:relative;
-      text-shadow: 1px 1px 0px rgba(0,0,0,0.4),
+      text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
     }
     .editor-body {
       background: #272822;
@@ -199,6 +177,7 @@
       <md-button
         class="menu"
         hide-gt-sm
+        aria-label="Menu"
         ng-click="nav.toggleList()">
         <md-icon md-svg-icon="menu"></md-icon>
       </md-button>
@@ -237,7 +216,12 @@
             </div>
             ~/About.json
           </div>
-          <pre class="editor-body md-whiteframe-4dp">
+          <pre class="editor-body md-whiteframe-1dp">
+<span class="secondary-text-color">/**
+ * This is my fancy pants portfolio.
+ * If you like what you see...
+ * Feel free to contact me.
+ */</span>
 <h3>Me</h3> = {
   <h3>About</h3>: """
 <p>Hello, my name is <b>Brandon Martinez</b> and I'm a developer.
@@ -282,7 +266,7 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
                   {{ project.body }}
                   </p>
                 </md-card-content>
-                <md-card-footer>
+                <md-card-footer layout-align="center">
                   <md-button href="{{ project.link }}"
                   title="{{ project.linkTitle }}"
                   class="dark-primary-color text-primary-color"
@@ -328,6 +312,15 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
       .icon("systems", "./assets/svg/systems.svg", 128);
       });
   </script>
-  
+  <script>
+    !function(h,a,x,o,r){h.GoogleAnalyticsObject=x;h[x]||(h[x]=function(){
+    (h[x].q=h[x].q||[]).push(arguments)});h[x].l=+new Date;o=a.createElement('script');
+    r=a.scripts[0];o.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(o,r)}(window,document,'ga');
+
+    ga('create', 'UA-81946402-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
 </body>
 </html>
