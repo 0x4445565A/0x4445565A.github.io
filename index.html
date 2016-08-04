@@ -44,6 +44,10 @@
       height: 50px;
     }
 
+    md-toolbar {
+      padding-left: 1em;
+    }
+
     md-list-item {
       max-height: 100px; /* Weird bug */
     }
@@ -188,17 +192,20 @@
 </head>
 <body ng-app="TehBmar" layout="column" ng-controller="NavigationController as nav">
 
-    <md-toolbar layout="row" class="dark-primary-color text-primary-color">
+    <md-toolbar layout="row" class="dark-primary-color text-primary-color" layout-align="start center">
       <md-button
         class="menu"
         hide-gt-sm
         ng-click="nav.toggleList()">
         <md-icon md-svg-icon="menu"></md-icon>
       </md-button>
-      <md-icon md-svg-icon="eye" class="banner"></md-icon>
-      <md-icon md-svg-icon="break" class="banner"></md-icon>
-      <md-icon md-svg-icon="systems" class="banner"></md-icon>
+      <div class="banner-container">
+        <md-icon md-svg-icon="eye" class="banner"></md-icon>
+        <md-icon md-svg-icon="break" class="banner"></md-icon>
+        <md-icon md-svg-icon="systems" class="banner"></md-icon>
+      </div>
     </md-toolbar>
+
 
     <div flex layout="row">
 
