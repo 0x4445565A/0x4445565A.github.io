@@ -25,11 +25,6 @@
           'icon': 'github',
         },
         {
-          'link': 'http://keybase.io/bmar',
-          'label': 'BMAR@KeyBase.io',
-          'icon': 'keybase',
-        },
-        {
           'link': 'https://www.linkedin.com/in/brandon-martinez-70497831',
           'label': 'LinkedIn',
           'icon': 'linkedin',
@@ -38,6 +33,11 @@
           'link': 'http://twitter.com/tehbmar',
           'label': 'TehBmar@Twitter',
           'icon': 'twitter',
+        },
+        {
+          'link': 'http://keybase.io/bmar',
+          'label': 'BMAR@KeyBase.io',
+          'icon': 'keybase',
         },
       ];
     }
