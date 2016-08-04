@@ -1,1 +1,146 @@
-Hello World
+<html lang="en" >
+<head>
+  <title>Brandon M @ iBreak.Systems</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <style>
+    html, body {
+      font-family: 'Roboto', sans-serif;
+      font-size:14px;
+      height:100%;
+      margin: 0px;
+      padding: 0px;
+      fill: currentColor;
+    }
+    md-toolbar h3 {
+      margin: auto;
+      font-weight: 500;
+    }
+    md-toolbar {
+      color: #000;
+    }
+    md-toolbar .banner {
+      width: 50px;
+      height: 50px;
+    }
+
+    md-list-item {
+      max-height: 100px; /* Weird bug */
+    }
+    md-list-item > .md-button {
+      width:100%;
+      text-align:left !important;
+    }
+
+    #content  {
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-top: 5px;
+    }
+
+    .avatar {
+      position: relative;
+      width: 128px;
+      height: 128px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      display: inline-block;
+      overflow: hidden;
+      margin: 0px;
+      vertical-align: middle;
+      zoom:0.70;
+      transform: translateZ(0);
+      -webkit-transform: scale(0.70);
+      -moz-transform:scale(0.70);
+    }
+    .avatar svg {
+      fill: #757575;
+    }
+    .dark-primary-color    { background: #00796B; }
+    .default-primary-color { background: #009688; }
+    .light-primary-color   { background: #B2DFDB; }
+    .text-primary-color    { color: #FFFFFF; }
+    .accent-color          { background: #607D8B; }
+    .primary-text-color    { color: #212121; }
+    .secondary-text-color  { color: #757575; }
+    .divider-color         { border-color: #BDBDBD; }
+  </style>
+</head>
+<body ng-app="TehBmar" layout="column" ng-controller="NavigationController as nav">
+
+    <md-toolbar layout="row" class="dark-primary-color text-primary-color">
+      <md-button
+        class="menu"
+        hide-gt-sm
+        ng-click="nav.toggleList()">
+        <md-icon md-svg-icon="menu"></md-icon>
+      </md-button>
+      <md-icon md-svg-icon="eye" class="banner"></md-icon>
+      <md-icon md-svg-icon="break" class="banner"></md-icon>
+      <md-icon md-svg-icon="systems" class="banner"></md-icon>
+    </md-toolbar>
+
+    <div flex layout="row">
+
+        <md-sidenav
+          md-component-id="left" 
+          md-is-locked-open="$mdMedia('gt-sm')"
+          class="md-whiteframe-4dp default-primary-color text-primary-color">
+          <md-list ng-repeat="item in nav.navItems">
+            <md-list-item>
+                  <md-button href="{{ item.link }}"
+                   title="{{ item.label }}"
+                   target="_blank">
+                    <md-icon md-svg-icon="{{ item.icon }}" class="avatar"></md-icon>
+                    {{ item.label }}
+                  </md-button>
+            </md-list-item>
+          </md-list>
+        </md-sidenav>
+
+        <md-content flex id="content">
+          <h2>func main() { fmt.Println("Hello World!") }</h2>
+          <p>
+            Hello, my name is Brandon Martinez and I'm a developer.
+          </p>
+          <p>
+            I have spent the last decade working with a myriad of technologies.  These have ranged from older languages like Perl all of the way to fancy new MVC/MVW Javascript frameworks like AngularJS and Meteor.  Currently I have been spending most of my time developing in GoLang, NodeJS, and AngularJS.  I have really fallen in love with these.
+          </p>
+        </md-content>
+    </div>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/navigationController.js"></script>
+  <script type="text/javascript">    
+    angular.module('TehBmar', ['ngMaterial', 'navigation'])
+    .config(function($mdThemingProvider, $mdIconProvider){
+      // $mdThemingProvider.theme('default')
+      //        .primaryPalette('grey', {
+      //           'default': '400',
+      //           'hue-1': '100',
+      //           'hue-2': '600',
+      //           'hue-3': 'A100' 
+      //        })
+      //        .accentPalette('red');
+    $mdIconProvider
+      .icon("menu", "./assets/svg/menu.svg", 24)
+      .icon("github", "./assets/svg/github.svg", 128)
+      .icon("linkedin", "./assets/svg/linkedin.svg", 128)
+      .icon("twitter", "./assets/svg/twitter.svg", 128)
+      .icon("eye", "./assets/svg/eye.svg", 128)
+      .icon("break", "./assets/svg/break.svg", 128)
+      .icon("systems", "./assets/svg/systems.svg", 128);
+      });
+  </script>
+  
+</body>
+</html>
