@@ -6,6 +6,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
   <style>
     html, body {
@@ -15,6 +16,28 @@
       margin: 0px;
       padding: 0px;
       fill: currentColor;
+    }
+    pre {
+      max-width: 100%;
+      white-space: pre-wrap;
+      font-family: 'Roboto Mono', monospace;
+    }
+    pre h3 {
+      display: inline-block;
+      margin: 0;
+    }
+    pre p {
+      padding-left: 2em;
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 0
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: bold;
+      cursor: pointer;
     }
     md-toolbar .banner {
       width: 50px;
@@ -93,6 +116,51 @@
       border-top: 1px solid rgba(0, 47, 42, 0.2);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+    .editor-header {
+      background: #444;
+      height: 35px;
+      line-height: 35px;
+      color: #FFF;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 4px 4px 0px 0px;
+      position:relative;
+    }
+    .editor-body {
+      background: #272822;
+      margin-top: 0;
+      padding: 2em;
+      color: rgb(200, 200, 200);
+      border-radius: 0px 0px 4px 4px;
+      border: #141511 1px solid;
+    }
+    .editor-body h3 {
+      color: #FFF;
+    }
+    .editor-header .editor-ui {
+      display: inline;
+      position: absolute;
+      left: 10px;
+      top: 3px;
+    }
+    .editor-header .editor-ui .ui-button {
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      background: #C23824;
+      display: inline-block;
+      margin-left: 3px;
+    }
+
+    .editor-header .editor-ui .ui-button.close {
+      background: #C23824;
+    }
+    .editor-header .editor-ui .ui-button.minimize {
+      background: #F2C600;
+    }
+    .editor-header .editor-ui .ui-button.maximize {
+      background: #1AAF5D;
+    }
   .dark-primary-color    { background: #455A64 !important; }
   .default-primary-color { background: #607D8B !important; }
   .light-primary-color   { background: #CFD8DC !important; }
@@ -136,7 +204,50 @@
         </md-sidenav>
 
         <md-content flex id="content">
-          <h2>Me = {</h2>
+          <div flex class="editor-header">
+            <div class="editor-ui">
+              <div class="ui-button close"></div>
+              <div class="ui-button minimize"></div>
+              <div class="ui-button maximize"></div>
+            </div>
+            ~/About.json
+          </div>
+          <pre class="editor-body">
+<h3>Me</h3> = {
+  <h3>About</h3>: """
+<p>Hello, my name is <b>Brandon Martinez</b> and I'm a developer.
+
+I have spent the last decade working with a myriad of technologies.  These have ranged from older languages like Perl all of the way to fancy new MVC/MVW Javascript frameworks like AngularJS and Meteor.I also have extensive experience in both offensive and defensive security for applications and systems.  Currently I have been spending most of my time developing in GoLang, NodeJS, and AngularJS.  I have really fallen in love with these tools.
+
+In the next few years I see myself primarily developing with MVC JS frameworks.  I honestly believe tools like AngularJS are the future of the Internet.</p>
+  """,
+  <h3>Contact</h3>: [
+    {{ nav.mail }},
+    <a href="https://www.linkedin.com/in/brandon-martinez-70497831" target="_blank">LinkedIn</a>,
+    <a href="http://twitter.com/tehbmar" target="_blank">Twitter</a>,
+  ],
+  <h3>StrongSkills</h3>: [
+    BASH,
+    CSS,
+    HTML,
+    Javascript,
+    Linux (Debian, Ubuntu, Fedora),
+    PHP,
+    Python,
+  ],
+  <h3>SomeSkill</h3>: [
+    GoLang,
+    AngularJS,
+    MeteorJS,
+    NodeJS,
+  ],
+  <h3>Keys</h3>: {
+    PGP-Public: <a href="https://keybase.io/bmar/key.asc" target="_blank">BABCE3158E5BB764</a>
+    SSH-RSA-Public: <a href="https://bmar.keybase.pub/keys/public_key" target="_blank">MD5:8F:DC:9D:60:71:F7</a>
+  },
+};
+          </pre>
+          <!-- <h2>Me = {</h2>
           <div class="push">
             <h2>About:</h2>
             <p>
@@ -186,7 +297,7 @@
               </ul>
               <h2>],</h2>
           </div>         
-          <h2>};</h2>
+          <h2>};</h2> -->
 
           <h1>Projects</h1>
           <div layout="row" layout-wrap layout-align="center">
