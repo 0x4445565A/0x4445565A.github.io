@@ -38,11 +38,3 @@
   }
 
 })();
-
-/*                  <md-button href="http://google.com"
-                   title="Launch Google.com in new window"
-                   target="_blank"
-                   aria-label="Google.com">
-                    <md-icon md-svg-icon="github" class="avatar"></md-icon>
-                    TehBmar@GitHub
-                  </md-button>*/
