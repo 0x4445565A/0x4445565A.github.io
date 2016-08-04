@@ -123,7 +123,6 @@
       color: #FFF;
       font-weight: bold;
       text-align: center;
-      border-radius: 4px 4px 0px 0px;
       position:relative;
     }
     .editor-body {
@@ -131,7 +130,6 @@
       margin-top: 0;
       padding: 2em;
       color: rgb(200, 200, 200);
-      border-radius: 0px 0px 4px 4px;
       border: #141511 1px solid;
     }
     .editor-body h3 {
@@ -153,13 +151,13 @@
     }
 
     .editor-header .editor-ui .ui-button.close {
-      background: #C23824;
+      background: rgba(194, 56, 36, 0.3);
     }
     .editor-header .editor-ui .ui-button.minimize {
-      background: #F2C600;
+      background: rgba(242, 198, 0, 0.3);
     }
     .editor-header .editor-ui .ui-button.maximize {
-      background: #1AAF5D;
+      background: rgba(26, 175, 93, 0.3);
     }
   .dark-primary-color    { background: #455A64 !important; }
   .default-primary-color { background: #607D8B !important; }
@@ -203,7 +201,7 @@
           </md-list>
         </md-sidenav>
 
-        <md-content flex id="content">
+        <md-content flex>
           <div flex class="editor-header">
             <div class="editor-ui">
               <div class="ui-button close"></div>
@@ -212,7 +210,7 @@
             </div>
             ~/About.json
           </div>
-          <pre class="editor-body">
+          <pre class="editor-body md-whiteframe-4dp">
 <h3>Me</h3> = {
   <h3>About</h3>: """
 <p>Hello, my name is <b>Brandon Martinez</b> and I'm a developer.
@@ -247,81 +245,31 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
   },
 };
           </pre>
-          <!-- <h2>Me = {</h2>
-          <div class="push">
-            <h2>About:</h2>
-            <p>
-              Hello, my name is Brandon Martinez and I'm a developer.
-            </p>
-            <p>
-              I have spent the last decade working with a myriad of technologies.  These have ranged from older languages like Perl all of the way to fancy new MVC/MVW Javascript frameworks like AngularJS and Meteor.  I also have extensive experience in both offensive and defensive security for applications and systems.  Currently I have been spending most of my time developing in GoLang, NodeJS, and AngularJS.  I have really fallen in love with these tools.
-            </p>
-            <p>
-              In the next few years I see myself primarily developing with MVC JS frameworks.  I honestly believe tools like AngularJS are the future of the Internet.
-            </p>
-          </div>
-          <div class="push">
-            <h2>Contact:</h2>
-            <p>
-              You can contact me via LinkedIn, Twitter, or my email <b>{{ nav.mail }}</b>
-            </p>
-          </div>
-          <div class="push">
-            <h2>StrongSkills: [</h2>
-              <ul>
-                <li>BASH</li>
-                <li>CSS</li>
-                <li>HTML</li>
-                <li>Javascript</li>
-                <li>Linux (Debian, Ubuntu, Fedora)</li>
-                <li>PHP</li>
-                <li>Python</li>
-              </ul>
-              <h2>],</h2>
-          </div>
-          <div class="push">
-            <h2>SomeExperience: [</h2>
-              <ul>
-                <li>GoLang</li>
-                <li>AngularJS</li>
-                <li>MeteorJS</li>
-                <li>NodeJS</li>
-              </ul>
-              <h2>],</h2>
-          </div>  
-          <div class="push">
-            <h2>keys: [</h2>
-              <ul>
-                <li>PGP Public: <a href="https://keybase.io/bmar/key.asc">BABCE3158E5BB764</a></li>
-                <li>RSA(SSH) Public: <a href="https://bmar.keybase.pub/keys/public_key">MD5:8F:DC:9D:60:71:F7</a></li>
-              </ul>
-              <h2>],</h2>
-          </div>         
-          <h2>};</h2> -->
-
-          <h1>Projects</h1>
-          <div layout="row" layout-wrap layout-align="center">
-            <md-card style="width: 300px;" class="light-primary-color" ng-repeat="project in nav.projects">
-              <img ng-src="{{ project.image }}" class="md-card-image" alt="user avatar">
-              <md-card-content>
-                <h2>{{ project.title }}</h2>
-                <hr>
-                <p>
-                {{ project.body }}
-                </p>
-              </md-card-content>
-              <md-card-footer>
-                <md-button href="{{ project.link }}"
-                title="{{ project.linkTitle }}"
-                class="dark-primary-color text-primary-color"
-                target="_blank">
-                  >  Go To Project
-                </md-button>
-              </md-card-footer>
-            </md-card>
-          </div>
-          <div layout="row" >
-          &nbsp;
+          <div flex id="content">
+            <h1>Projects</h1>
+            <div layout="row" layout-wrap layout-align="center">
+              <md-card style="width: 300px;" class="light-primary-color" ng-repeat="project in nav.projects">
+                <img ng-src="{{ project.image }}" class="md-card-image" alt="user avatar">
+                <md-card-content>
+                  <h2>{{ project.title }}</h2>
+                  <hr>
+                  <p>
+                  {{ project.body }}
+                  </p>
+                </md-card-content>
+                <md-card-footer>
+                  <md-button href="{{ project.link }}"
+                  title="{{ project.linkTitle }}"
+                  class="dark-primary-color text-primary-color"
+                  target="_blank">
+                    >  Go To Project
+                  </md-button>
+                </md-card-footer>
+              </md-card>
+            </div>
+            <div layout="row" >
+            &nbsp;
+            </div>
           </div>
         </md-content>
     </div>
