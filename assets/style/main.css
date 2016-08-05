@@ -158,6 +158,10 @@
     .editor-header .editor-ui .ui-button.close {
       background: rgba(194, 56, 36, 0.3);
     }
+    .editor-header .editor-ui .ui-button.close:hover {
+      cursor: pointer;
+      background: rgba(194, 56, 36, 0.5);
+    }
     .editor-header .editor-ui .ui-button.minimize {
       background: rgba(242, 198, 0, 0.3);
     }
