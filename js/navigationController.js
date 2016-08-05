@@ -3,6 +3,7 @@
   angular
        .module('navigation')
        .controller('NavigationController', [
+          '$scope',
           '$mdSidenav',
           '$http',
           NavigationController
@@ -14,6 +15,9 @@
         })
        .directive('mockEditor', function () {
           return {
+            link: function(scope, el, attr) {
+              $('mock-editor .editor-header .editor-ui .close').raptorize();
+            },
             templateUrl: './assets/templates/mock.html',
           };
         })
@@ -38,9 +42,8 @@
           };
         });
 
-  function NavigationController($mdSidenav, $http) {
+  function NavigationController($scope, $mdSidenav, $http) {
     var self = this;
-
     self.toggleList = toggleNav;
     self.navItems = navigationItems();
     self.mail = 'root@iBreak.Systems';
