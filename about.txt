@@ -1,0 +1,37 @@
+<span class="secondary-text-color">/**
+ * This is my fancy pants portfolio.
+ * If you like what you see...
+ * Feel free to contact me.
+ */</span>
+<h3>Me</h3> = {
+  <h3>About</h3>: """
+<p>Hello, my name is <b>Brandon Martinez</b> and I'm a developer.
+
+I have spent the last decade working with a myriad of technologies.  These have ranged from older languages like Perl all of the way to fancy new MVC/MVW Javascript frameworks like AngularJS and Meteor.I also have extensive experience in both offensive and defensive security for applications and systems.  Currently I have been spending most of my time developing in GoLang, NodeJS, and AngularJS.  I have really fallen in love with these tools.
+
+In the next few years I see myself primarily developing with MVC JS frameworks.  I honestly believe tools like AngularJS are the future of the Internet.</p>  """,
+  <h3>Contact</h3>: [
+    {{ nav.mail }},
+    <a href="https://www.linkedin.com/in/brandon-martinez-70497831" target="_blank">LinkedIn</a>,
+    <a href="http://twitter.com/tehbmar" target="_blank">Twitter</a>,
+  ],
+  <h3>StrongSkills</h3>: [
+    BASH,
+    CSS,
+    HTML,
+    Javascript,
+    Linux (Debian, Ubuntu, Fedora),
+    PHP,
+    Python,
+  ],
+  <h3>SomeSkill</h3>: [
+    GoLang,
+    AngularJS,
+    MeteorJS,
+    NodeJS,
+  ],
+  <h3>Keys</h3>: {
+    PGP-Public: <a href="https://keybase.io/bmar/key.asc" target="_blank">BABCE3158E5BB764</a>,
+    SSH-RSA-Public: <a href="https://bmar.keybase.pub/keys/public_key" target="_blank">MD5:8F:DC:9D:60:71:F7</a>,
+  },
+};

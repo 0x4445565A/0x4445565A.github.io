@@ -4,18 +4,42 @@
        .module('navigation')
        .controller('NavigationController', [
           '$mdSidenav',
+          '$http',
           NavigationController
-       ]);
+       ])
+       .filter('html', function($sce) {
+          return function(val) {
+              return $sce.trustAsHtml(val);
+          };
+        })
+       .directive('mockEditor', function () {
+          return {
+            templateUrl: './assets/templates/mock.html',
+          };
+        })
+       .directive('projectCard', function () {
+          return {
+            templateUrl: './assets/templates/projectCard.html',
+          };
+        });
 
-  function NavigationController($mdSidenav) {
+  function NavigationController($mdSidenav, $http) {
     var self = this;
 
     self.toggleList = toggleNav;
     self.navItems = navigationItems();
     self.mail = 'root@iBreak.Systems';
+    self.about = '';
+    aboutText(self);
     self.projects = projectItems();
     function toggleNav() {
       $mdSidenav('left').toggle();
+    }
+    function aboutText(self) {
+      $http.get("about.txt")
+      .then(function(response) {
+          self.about = response.data;
+      });
     }
     function navigationItems() {
       return [
@@ -82,15 +106,3 @@
   }
 
 })();
-
-              // <h4>KeyBase.IO Chrome Extension</h4>
-              // <hr>
-              // <p>
-              // A Chrome Extension that leverages KBPGP.js and KeyBase.io API.  It is designed to enable easy and accurate PGP encryption with public keys.  It also supports the ability to sign messages with your armored private key.
-              // </p>
-              // <md-button href="https://github.com/tehbmar/easy-keybase.io-encryption-extension"
-              //   title="Easy KeyBase.io Encryption"
-              //   class="dark-primary-color text-primary-color"
-              //   target="_blank">
-              //   Go To Project
-              // </md-button>

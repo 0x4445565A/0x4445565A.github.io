@@ -1,4 +1,4 @@
 (function(){
   'use strict';
-  angular.module('navigation', [ 'ngMaterial' ]);
+  angular.module('navigation', [ 'ngMaterial']);
 })();

@@ -11,191 +11,9 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-  <style>
-    html, body {
-      font-family: 'Roboto', sans-serif;
-      font-size:14px;
-      height:100%;
-      margin: 0px;
-      padding: 0px;
-      fill: currentColor;
-    }
-    pre {
-      max-width: 100%;
-      white-space: pre-wrap;
-      font-family: 'Roboto Mono', monospace;
-    }
-    pre h3 {
-      display: inline-block;
-      margin: 0;
-    }
-    pre p {
-      padding-left: 2em;
-      margin: 0;
-      padding-top: 0;
-      padding-bottom: 0
-    }
-    a {
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: bold;
-      cursor: pointer;
-    }
-    md-toolbar .banner {
-      width: 50px;
-      height: 50px;
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-
-    md-toolbar {
-      padding-left: 1em;
-    }
-
-    md-list-item {
-      max-height: 100px; /* Weird bug */
-    }
-    md-list-item > .md-button {
-      width:100%;
-      text-align:left !important;
-    }
-
-    #content  {
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-top: 5px;
-    }
-
-    .avatar {
-      position: relative;
-      width: 128px;
-      height: 128px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      border-radius: 50%;
-      display: inline-block;
-      overflow: hidden;
-      margin: 0px;
-      vertical-align: middle;
-      zoom:0.70;
-      transform: translateZ(0);
-      -webkit-transform: scale(0.70);
-      -moz-transform:scale(0.70);
-    }
-    .avatar svg {
-      fill: #000;
-    }
-    .push {
-      padding-left: 3em;
-    }
-    md-card {
-      border-radius: 0 0 4px 4px;
-    }
-    md-card img.md-card-image {
-      height: auto !important;
-      border-radius: 4px 4px 0 0;
-    }
-    md-card span.project-tags {
-      color: rgba(0, 0, 0, 0.5);
-      font-size: .8em;
-    }
-    md-card .filler {
-      min-height: 4.5em;
-    }
-    md-card-footer .md-button {
-      width: 250px;
-    }
-    md-card h2 {
-      text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
-      margin-bottom: 2px;
-    }
-    md-card hr {
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 47, 42, 0.2);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .editor-header {
-      background: #444;
-      height: 35px;
-      line-height: 35px;
-      color: #FFF;
-      font-weight: bold;
-      text-align: center;
-      position:relative;
-      text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
-    }
-    .editor-body {
-      background: #272822;
-      margin: 0;
-      padding: 2em;
-      padding-top: 1px;
-      padding-bottom: 1em;
-      color: rgb(200, 200, 200);
-      border: #141511 1px solid;
-      position: relative;
-    }
-    .editor-body h3 {
-      color: #FFF;
-    }
-    .editor-body .editor-scroll {
-      width: 15px;
-      height: 100%;
-      position: absolute;
-      background: rgba(0, 0, 0, 0.3);
-      top: 0;
-      right: 0;
-    }
-    .editor-body .editor-scroll .editor-scroll-scrub {
-      width: 11px;
-      height: 80%;
-      background: rgba(69, 69, 69, 0.8);
-      margin-left: 2px;
-      margin-top: 10px;
-      border-radius: 11px
-    }
-    .editor-header .editor-ui {
-      display: inline;
-      position: absolute;
-      left: 10px;
-      top: 3px;
-    }
-    .editor-header .editor-ui .ui-button {
-      width: 15px;
-      height: 15px;
-      border-radius: 100%;
-      background: #C23824;
-      display: inline-block;
-      margin-left: 3px;
-    }
-
-    .editor-header .editor-ui .ui-button.close {
-      background: rgba(194, 56, 36, 0.3);
-    }
-    .editor-header .editor-ui .ui-button.minimize {
-      background: rgba(242, 198, 0, 0.3);
-    }
-    .editor-header .editor-ui .ui-button.maximize {
-      background: rgba(26, 175, 93, 0.3);
-    }
-    .editor-footer {
-      width: 100%;
-      height: 10px;
-      border-top: 1px solid #737373;
-      background: #575757;
-    }
-  .dark-primary-color    { background: #455A64 !important; }
-  .default-primary-color { background: #607D8B !important; }
-  .light-primary-color   { background: #CFD8DC !important; }
-  .text-primary-color    { color: #FFFFFF !important; }
-  .accent-color          { background: #009688; }
-  .primary-text-color    { color: #212121; }
-  .secondary-text-color  { color: #757575; }
-  .divider-color         { border-color: #BDBDBD; }
-  </style>
+  <link rel="stylesheet" href="./assets/style/main.css">
 </head>
 <body ng-app="TehBmar" layout="column" ng-controller="NavigationController as nav">
-
     <md-toolbar layout="row" class="dark-primary-color text-primary-color" layout-align="center">
       <md-button
         class="menu"
@@ -205,16 +23,12 @@
         <md-icon md-svg-icon="menu"></md-icon>
       </md-button>
       <span flex style="text-align: center; margin-top: 8px;">
-        
       <md-icon md-svg-icon="eye" class="banner"></md-icon>
       <md-icon md-svg-icon="break" class="banner"></md-icon>
       <md-icon md-svg-icon="systems" class="banner"></md-icon>
       </span>
     </md-toolbar>
-
-
     <div flex layout="row">
-
         <md-sidenav
           md-component-id="left" 
           md-is-locked-open="$mdMedia('gt-sm')"
@@ -230,85 +44,12 @@
             </md-list-item>
           </md-list>
         </md-sidenav>
-
         <md-content flex>
-          <div flex class="editor-header">
-            <div class="editor-ui">
-              <div class="ui-button close"></div>
-              <div class="ui-button minimize"></div>
-              <div class="ui-button maximize"></div>
-            </div>
-            ~/About.json
-          </div>
-          <pre class="editor-body">
-<span class="secondary-text-color">/**
- * This is my fancy pants portfolio.
- * If you like what you see...
- * Feel free to contact me.
- */</span>
-<h3>Me</h3> = {
-  <h3>About</h3>: """
-<p>Hello, my name is <b>Brandon Martinez</b> and I'm a developer.
-
-I have spent the last decade working with a myriad of technologies.  These have ranged from older languages like Perl all of the way to fancy new MVC/MVW Javascript frameworks like AngularJS and Meteor.I also have extensive experience in both offensive and defensive security for applications and systems.  Currently I have been spending most of my time developing in GoLang, NodeJS, and AngularJS.  I have really fallen in love with these tools.
-
-In the next few years I see myself primarily developing with MVC JS frameworks.  I honestly believe tools like AngularJS are the future of the Internet.</p>  """,
-  <h3>Contact</h3>: [
-    {{ nav.mail }},
-    <a href="https://www.linkedin.com/in/brandon-martinez-70497831" target="_blank">LinkedIn</a>,
-    <a href="http://twitter.com/tehbmar" target="_blank">Twitter</a>,
-  ],
-  <h3>StrongSkills</h3>: [
-    BASH,
-    CSS,
-    HTML,
-    Javascript,
-    Linux (Debian, Ubuntu, Fedora),
-    PHP,
-    Python,
-  ],
-  <h3>SomeSkill</h3>: [
-    GoLang,
-    AngularJS,
-    MeteorJS,
-    NodeJS,
-  ],
-  <h3>Keys</h3>: {
-    PGP-Public: <a href="https://keybase.io/bmar/key.asc" target="_blank">BABCE3158E5BB764</a>,
-    SSH-RSA-Public: <a href="https://bmar.keybase.pub/keys/public_key" target="_blank">MD5:8F:DC:9D:60:71:F7</a>,
-  },
-};<div class="editor-scroll"><div class="editor-scroll-scrub"></div></div></pre>
-<div class="editor-footer md-whiteframe-1dp"></div>
+          <mock-editor></mock-editor>
           <div flex id="content">
             <h1 style="color:#455A64;">&lt;!-- Start Projects  --&gt;</h1>
-            <div layout="row" layout-wrap layout-align="center">
-              <md-card style="width: 300px;" class="light-primary-color" ng-repeat="project in nav.projects">
-                <img ng-src="{{ project.image }}" class="md-card-image" alt="user avatar">
-                <md-card-content>
-                  <div class="filler">
-                    <h2>{{ project.title }}</h2>
-                    <span class="project-tags">
-                      {{ project.tags }}
-                    </span>
-                  </div>
-                  <hr>
-                  <p>
-                  {{ project.body }}
-                  </p>
-                </md-card-content>
-                <md-card-footer layout-align="center">
-                  <md-button href="{{ project.link }}"
-                  title="{{ project.linkTitle }}"
-                  class="md-raised dark-primary-color text-primary-color"
-                  target="_blank">
-                    >  Go To Project
-                  </md-button>
-                </md-card-footer>
-              </md-card>
-            </div>
-            <div layout="row" >
-            &nbsp;
-            </div>
+            <project-card layout="row" layout-wrap layout-align="center"></project-card>
+            <div layout="row">&nbsp;</div>
           </div>
         </md-content>
     </div>
@@ -323,14 +64,6 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
   <script type="text/javascript">    
     angular.module('TehBmar', ['ngMaterial', 'navigation'])
     .config(function($mdThemingProvider, $mdIconProvider){
-      // $mdThemingProvider.theme('default')
-      //        .primaryPalette('grey', {
-      //           'default': '400',
-      //           'hue-1': '100',
-      //           'hue-2': '600',
-      //           'hue-3': 'A100' 
-      //        })
-      //        .accentPalette('red');
     $mdIconProvider
       .icon("menu", "./assets/svg/menu.svg", 24)
       .icon("github", "./assets/svg/github.svg", 128)
@@ -347,10 +80,8 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
     (h[x].q=h[x].q||[]).push(arguments)});h[x].l=+new Date;o=a.createElement('script');
     r=a.scripts[0];o.src='//www.google-analytics.com/analytics.js';
     r.parentNode.insertBefore(o,r)}(window,document,'ga');
-
     ga('create', 'UA-81946402-1', 'auto');
     ga('send', 'pageview');
   </script>
-
 </body>
 </html>
