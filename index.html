@@ -14,45 +14,14 @@
   <link rel="stylesheet" href="./assets/style/main.css">
 </head>
 <body ng-app="TehBmar" layout="column" ng-controller="NavigationController as nav">
-    <md-toolbar layout="row" class="dark-primary-color text-primary-color" layout-align="center">
-      <md-button
-        class="menu"
-        hide-gt-sm
-        aria-label="Menu"
-        ng-click="nav.toggleList()">
-        <md-icon md-svg-icon="menu"></md-icon>
-      </md-button>
-      <span flex style="text-align: center; margin-top: 8px;">
-      <md-icon md-svg-icon="eye" class="banner"></md-icon>
-      <md-icon md-svg-icon="break" class="banner"></md-icon>
-      <md-icon md-svg-icon="systems" class="banner"></md-icon>
-      </span>
-    </md-toolbar>
-    <div flex layout="row">
-        <md-sidenav
-          md-component-id="left" 
-          md-is-locked-open="$mdMedia('gt-sm')"
-          class="md-whiteframe-4dp default-primary-color text-primary-color">
-          <md-list ng-repeat="item in nav.navItems">
-            <md-list-item>
-                  <md-button href="{{ item.link }}"
-                   title="{{ item.label }}"
-                   target="_blank">
-                    <md-icon md-svg-icon="{{ item.icon }}" class="avatar"></md-icon>
-                    {{ item.label }}
-                  </md-button>
-            </md-list-item>
-          </md-list>
-        </md-sidenav>
-        <md-content flex>
-          <mock-editor></mock-editor>
-          <div flex id="content">
-            <h1 style="color:#455A64;">&lt;!-- Start Projects  --&gt;</h1>
-            <project-card layout="row" layout-wrap layout-align="center"></project-card>
-            <div layout="row">&nbsp;</div>
-          </div>
-        </md-content>
-    </div>
+  <system-toolbar></system-toolbar>
+  <div flex layout="row">
+    <system-nav layout="row"></system-nav>
+    <md-content flex>
+      <mock-editor></mock-editor>
+      <projects flex id="content"></projects>
+    </md-content>
+  </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>

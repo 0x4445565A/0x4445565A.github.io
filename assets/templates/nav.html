@@ -1,0 +1,15 @@
+<md-sidenav
+          md-component-id="left" 
+          md-is-locked-open="$mdMedia('gt-sm')"
+          class="md-whiteframe-4dp default-primary-color text-primary-color">
+          <md-list ng-repeat="item in nav.navItems">
+            <md-list-item>
+                  <md-button href="{{ item.link }}"
+                   title="{{ item.label }}"
+                   target="_blank">
+                    <md-icon md-svg-icon="{{ item.icon }}" class="avatar"></md-icon>
+                    {{ item.label }}
+                  </md-button>
+            </md-list-item>
+          </md-list>
+        </md-sidenav>

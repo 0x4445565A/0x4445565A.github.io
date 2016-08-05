@@ -21,6 +21,21 @@
           return {
             templateUrl: './assets/templates/projectCard.html',
           };
+        })
+        .directive('systemNav', function () {
+          return {
+            templateUrl: './assets/templates/nav.html',
+          };
+        })
+        .directive('systemToolbar', function () {
+          return {
+            templateUrl: './assets/templates/systemToolbar.html',
+          };
+        })
+        .directive('projects', function () {
+          return {
+            templateUrl: './assets/templates/projects.html',
+          };
         });
 
   function NavigationController($mdSidenav, $http) {
