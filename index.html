@@ -45,6 +45,8 @@
     md-toolbar .banner {
       width: 50px;
       height: 50px;
+      margin-left: 5px;
+      margin-right: 5px;
     }
 
     md-toolbar {
@@ -86,14 +88,26 @@
     .push {
       padding-left: 3em;
     }
+    md-card {
+      border-radius: 0 0 4px 4px;
+    }
     md-card img.md-card-image {
       height: auto !important;
+      border-radius: 4px 4px 0 0;
+    }
+    md-card span.project-tags {
+      color: rgba(0, 0, 0, 0.5);
+      font-size: .8em;
+    }
+    md-card .filler {
+      min-height: 4.5em;
     }
     md-card-footer .md-button {
       width: 250px;
     }
     md-card h2 {
       text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+      margin-bottom: 2px;
     }
     md-card hr {
       border: 0;
@@ -173,7 +187,7 @@
   .dark-primary-color    { background: #455A64 !important; }
   .default-primary-color { background: #607D8B !important; }
   .light-primary-color   { background: #CFD8DC !important; }
-  .text-primary-color    { color: #FFFFFF; }
+  .text-primary-color    { color: #FFFFFF !important; }
   .accent-color          { background: #009688; }
   .primary-text-color    { color: #212121; }
   .secondary-text-color  { color: #757575; }
@@ -182,7 +196,7 @@
 </head>
 <body ng-app="TehBmar" layout="column" ng-controller="NavigationController as nav">
 
-    <md-toolbar layout="row" class="dark-primary-color text-primary-color" layout-align="start center">
+    <md-toolbar layout="row" class="dark-primary-color text-primary-color" layout-align="center">
       <md-button
         class="menu"
         hide-gt-sm
@@ -190,18 +204,19 @@
         ng-click="nav.toggleList()">
         <md-icon md-svg-icon="menu"></md-icon>
       </md-button>
-      <div class="banner-container">
-        <md-icon md-svg-icon="eye" class="banner"></md-icon>
-        <md-icon md-svg-icon="break" class="banner"></md-icon>
-        <md-icon md-svg-icon="systems" class="banner"></md-icon>
-      </div>
+      <span flex style="text-align: center; margin-top: 8px;">
+        
+      <md-icon md-svg-icon="eye" class="banner"></md-icon>
+      <md-icon md-svg-icon="break" class="banner"></md-icon>
+      <md-icon md-svg-icon="systems" class="banner"></md-icon>
+      </span>
     </md-toolbar>
 
 
     <div flex layout="row">
 
         <md-sidenav
-          md-component-id="left" 
+          md-component-id="right" 
           md-is-locked-open="$mdMedia('gt-sm')"
           class="md-whiteframe-4dp default-primary-color text-primary-color">
           <md-list ng-repeat="item in nav.navItems">
@@ -270,7 +285,12 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
               <md-card style="width: 300px;" class="light-primary-color" ng-repeat="project in nav.projects">
                 <img ng-src="{{ project.image }}" class="md-card-image" alt="user avatar">
                 <md-card-content>
-                  <h2>{{ project.title }}</h2>
+                  <div class="filler">
+                    <h2>{{ project.title }}</h2>
+                    <span class="project-tags">
+                      {{ project.tags }}
+                    </span>
+                  </div>
                   <hr>
                   <p>
                   {{ project.body }}
@@ -279,7 +299,7 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
                 <md-card-footer layout-align="center">
                   <md-button href="{{ project.link }}"
                   title="{{ project.linkTitle }}"
-                  class="dark-primary-color text-primary-color"
+                  class="md-raised dark-primary-color text-primary-color"
                   target="_blank">
                     >  Go To Project
                   </md-button>
