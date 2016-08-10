@@ -11,7 +11,7 @@ I have spent the last decade working with a myriad of technologies.  These have 
 
 In the next few years I see myself primarily developing with MVC JS frameworks.  I honestly believe tools like AngularJS are the future of the Internet.</p>  """,
   <h3>Contact</h3>: [
-    {{ nav.mail }},
+    root@ibreak.systems,
     <a href="https://www.linkedin.com/in/brandon-martinez-70497831" target="_blank">LinkedIn</a>,
     <a href="http://twitter.com/tehbmar" target="_blank">Twitter</a>,
   ],
