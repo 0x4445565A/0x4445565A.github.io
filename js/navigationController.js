@@ -62,8 +62,8 @@
     function navigationItems() {
       return [
         {
-          'link': 'http://github.com/tehbmar',
-          'label': 'TehBmar@GitHub',
+          'link': 'http://github.com/0x4445565A',
+          'label': '0x4445565A@GitHub',
           'icon': 'github',
         },
         {
@@ -72,8 +72,8 @@
           'icon': 'linkedin',
         },
         {
-          'link': 'http://twitter.com/tehbmar',
-          'label': 'TehBmar@Twitter',
+          'link': 'http://twitter.com/0x4445565A',
+          'label': '0x4445565A@Twitter',
           'icon': 'twitter',
         },
         {
