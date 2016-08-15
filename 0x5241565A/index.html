@@ -1,5 +1,13 @@
 <html>
   <head>
+    <script type="text/javascript" src="snowstorm.js"></script>
+    <script type="text/javascript">
+      snowStorm.snowColor = '#F7CED9';
+      snowStorm.flakesMaxActive = 23;
+      snowStorm.snowCharacter = '&#x25A0';
+      snowStorm.snowStick = false;
+    </script>
+
     <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     <style>
       html, body {
@@ -10,9 +18,9 @@
         background: #F1F3E2 url(bg.gif) bottom right no-repeat fixed;
         background-size: cover;
         color: #000;
-        font-family: 'Press Start 2P', cursive;
       }
       .message {
+        font-family: 'Press Start 2P', cursive;
         position: absolute;
         right: 0;
         top: 0;
