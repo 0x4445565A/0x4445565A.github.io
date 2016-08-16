@@ -371,14 +371,12 @@ nav ul li:hover {
 .jumbotron.our-map {
   padding: 0;
   margin-bottom: 0;
-  max-height: 350px;
+
+  height: 350px;
   overflow: hidden;
   background: none;
-}
-
-.our-map img {
-  max-width: 100%;
-  width: 100%;
+  background: url(./images/map.png) bottom right no-repeat fixed;
+  background-size: cover;
 }
 
 .our-affect {
