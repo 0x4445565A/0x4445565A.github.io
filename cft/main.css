@@ -473,6 +473,15 @@ nav ul li:hover {
   margin-bottom: 30px;
 }
 
+.our-sponsors, .our-sustainability, .our-plan, .our-patreon {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.our-patreon {
+  padding-top: 0px;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .logo-header.jumbotron {
