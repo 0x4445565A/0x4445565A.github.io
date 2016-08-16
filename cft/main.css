@@ -401,13 +401,13 @@ nav ul li:hover {
   height: 350px;
   overflow: hidden;
   background: none;
-  background: url(./images/map.png) bottom right no-repeat fixed;
+  background: url(./images/map.png) center center no-repeat fixed;
   background-size: cover;
 }
 
 .our-affect {
   padding: 50px 0 40px 0;
-  background: #F1F3E2 url(./images/grass.png) bottom right no-repeat fixed;
+  background: #F1F3E2 url(./images/grass.png) center center no-repeat fixed;
   background-size: cover;
 }
 .our-affect .affect-item {
