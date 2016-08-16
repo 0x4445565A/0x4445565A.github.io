@@ -496,6 +496,10 @@ nav ul li:hover {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  .row.our-patreon, .row.our-patreon div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .our-sponsors, .our-sustainability, .our-plan, .our-patreon {
     padding-top: 60px;
     padding-bottom: 60px;
