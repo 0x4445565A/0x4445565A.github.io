@@ -155,7 +155,7 @@ img.placeholder { border: solid 1px #000; }
 .fill-cover h1 {
   width: 100%;
   color: #fff;
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
@@ -203,7 +203,7 @@ span.obvious-scroll a:hover div {
 
 .fill-cover span.sub-info {
   display: block;
-  font-size: .25em;
+  font-size: .2em;
   color: rgba(255, 255, 255, 0.7);
 }
 #subscribe-form input:active {
@@ -217,7 +217,7 @@ span.obvious-scroll a:hover div {
   height: 80px;
   max-height: 80px;
   min-height: 80px;
-  font-size: .6em;
+  font-size: .4em;
 }
 
 #subscribe-form input::-webkit-input-placeholder {
@@ -485,6 +485,15 @@ nav ul li:hover {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .fill-cover span.sub-info {
+    font-size: .2em;
+  }
+  .fill-cover h1 {
+    font-size: 5em;
+  }
+  #subscribe-form input {
+    font-size: .6em;
+  }
   .logo-header.jumbotron {
     height: 65px;
     min-height: 65px;
