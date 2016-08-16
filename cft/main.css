@@ -7,6 +7,13 @@ html, body {
   min-width:320px;
 }
 
+/**
+ * Damn mobile browsers.
+ */
+video::-webkit-media-controls {
+  display: none;
+}
+
 body div.container-fluid {
   padding: 0;
 }
@@ -120,6 +127,11 @@ img.placeholder { border: solid 1px #000; }
   height: 115.4701px;
   z-index: 2;
   background: inherit;
+}
+
+.fill.no-video {
+  background: url(./video/bg.gif) center center no-repeat fixed;
+  background-size: cover;
 }
 
 .fill {

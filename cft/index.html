@@ -33,9 +33,9 @@
     </div>
   </div>
   <div class="row fill">
-    <video class='fill-video' loop="true" autoplay="true" controls="false" name="media">
-      <source src="./video/bg.mp4" type="video/mp4">
-      <source src="./video/bg.webm" type="video/webm">
+    <video class='fill-video' id="video" loop="true" autoplay="true" autobuffer="true" controls="false" name="media">
+      <source src="./video/bg.m4v">
+
     </video>
     <div class="fill-cover">
       <h1>Join Our Journey
@@ -558,6 +558,24 @@ $(window).on("load", function() {
 });
 
 $(document).ready(function() {
+  var autoPlayAllowed = true;
+  var promise = document.createElement("video").play();
+  if(promise instanceof Promise){
+    promise.catch(function(error){
+      if(error.name == "NotAllowedError"){
+        autoPlayAllowed = false;
+      }else{
+        throw error;
+      }
+    }).then(function(){
+      if(!autoPlayAllowed){
+        console.log("Not allowed");
+        $('#video').hide();
+        $('.fill').addClass('no-video');
+
+      }
+    });
+  }
   $('.nav-container').hide();
   $('.menu-icon').click(function(e) {
     e.preventDefault();
