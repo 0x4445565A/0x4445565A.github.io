@@ -523,11 +523,16 @@ nav ul li:hover {
     -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
+    text-align: justify;
+    text-justify: inter-word;
+
   }
   .our-sustainability p, .our-patreon p {
     -webkit-column-count: 2; /* Chrome, Safari, Opera */
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
+    text-align: justify;
+    text-justify: inter-word;
   }
 }
 
