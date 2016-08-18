@@ -43,6 +43,12 @@ h2 {
   font-weight: bold;
   color: #f1f6f8;
   text-shadow: 1px 1px 0px #6a9db7;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+#contact-us h2, #our-patreon h2 {
+  margin-top: 30px;
 }
 .sticky {
   position: fixed;
@@ -403,13 +409,13 @@ nav ul li:hover {
 }
 
 #our-support-patreon img {
+  width: 90%;
   max-width: 750px;
 }
 
 .jumbotron.our-map {
   padding: 0;
   margin-bottom: 0;
-
   height: 350px;
   overflow: hidden;
   background: none;
@@ -527,6 +533,9 @@ nav ul li:hover {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  #our-patreon h2 {
+    margin-top: 0;
+  }
   .row.our-patreon, .row.our-patreon div {
     padding-left: 15px;
     padding-right: 15px;
