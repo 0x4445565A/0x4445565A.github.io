@@ -5,6 +5,7 @@ html, body {
   font-family: 'Lato', sans-serif;
   font-size: 17px;
   min-width:320px;
+  letter-spacing: 0.01em;
 }
 
 /**
