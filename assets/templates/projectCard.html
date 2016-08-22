@@ -1,5 +1,5 @@
 <md-card style="width: 300px;" class="light-primary-color" ng-repeat="project in nav.projects">
-                <img ng-src="{{ project.image }}" class="md-card-image" alt="user avatar">
+                <img ng-src="{{ project.image }}" class="md-card-image" alt="{{ project.linkTitle }}">
                 <md-card-content>
                   <div class="filler">
                     <h2>{{ project.title }}</h2>
