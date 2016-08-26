@@ -35,7 +35,6 @@
     });
 
     function getPost(self) {
-      console.log(self.posts);
       var posts = self.posts;
       if (typeof posts[$routeParams.id] != "undefined") {
         self.post.title = posts[$routeParams.id].title;
