@@ -19,23 +19,73 @@
         <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your message this will auto-magically be encrypted." required=""></textarea>
       </div>
 
-      <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info btn-block btn-success">
+      <input type="submit" name="submit" id="submit" value="Loading PGP key..." class="btn btn-info btn-block btn-success" disabled="true">
 
       <input type="hidden" name="_next" value=".#thankyou">
-      <input type="hidden" name="_subject" value="New submission!">
+      <input type="hidden" name="_subject" value="New Encrypted Message">
       <input type="text" name="_gotcha" style="display:none">
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://0x4445565a.github.io/kbpgp-2.0.8-min.js"></script>
     <script>
+      /**
+       * You only have  to touch this!
+       */
+      var mail = 'root@ibreak.systems';
+      var kbUser = 'bmar';
+      /**
+       * End of touching.
+       */
+
       $(document).ready(function() {
-        var mail = 'root@ibreak.systems';
+        var key = '';
         var encForm = $('#encryptMessage');
-        encForm.attr('action', "http://formspree.io/" + mail);
-        encForm.find('input[name="_next"]').attr('value', window.location.href + '#submit');
+        encForm.attr('action', "https://formspree.io/" + mail);
         if (window.location.hash == "#submit") {
+          window.location.hash = "";
           $('.success').show();
         }
+        encForm.find('input[name="_next"]').attr('value', window.location.href + '#submit');
+        $.get("https://keybase.io/" + kbUser + "/key.asc", function(r) {
+          key = r;
+        })
+        .done(function() {
+          encForm.find('input[type="submit"]')
+          .prop('disabled', false)
+          .attr('value', "Auto-Encypt + Send");
+        })
+        .fail(function() {
+           alert( "Could not load key properly alert the recipient through direct contact!" );
+        });
+        encForm.find('input[type="submit"]').click(function(e) {
+          if (key == '') {
+            alert('Key was not loaded');
+            e.preventDefault();
+            return false;
+          }
+          kbpgp.KeyManager.import_from_armored_pgp({
+            armored: key
+          }, function(err, keyManager) {
+            if (!err) {
+              var params = {
+                msg:         encForm.find('#message').val(),
+                encrypt_for: keyManager
+              };
+
+              kbpgp.box(params, function(err, result_string, result_buffer) {
+                if (err) {
+                  alert("Error encrypting, sorry!");
+                  console.log(err);
+                  e.preventDefault();
+                  return false;
+                }
+                encForm.find('#message').val(result_string);
+                encForm.submit();
+                return;
+              });
+            }
+          });
+        });
       });
     </script>
   </body>

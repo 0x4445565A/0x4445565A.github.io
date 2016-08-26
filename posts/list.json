@@ -3,5 +3,10 @@
     "title":"Hello World - Dissection on the AngularJS Blog",
     "body":"helloWorld",
     "id":"hello-world"
+  },
+  "quick-kbpgp":{
+    "title":"Quick guide on Keybase Messages",
+    "body":"kbpgpMessage",
+    "id":"quick-kbpgp"
   }
 }

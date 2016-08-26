@@ -189,3 +189,7 @@ pre.blog-content img {
   text-align: center;
   margin: 0 auto;
 }
+
+pre.blog-content {
+  padding-bottom: 5em;
+}
