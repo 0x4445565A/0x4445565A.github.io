@@ -8,7 +8,7 @@
     <div class="alert alert-success success" style="display:none;">
       <strong>Success!</strong> Your message was successfully sent.
     </div>
-    <form role="form" action="" method="post" id="encryptMessage">
+    <form role="form" action="" method="post" id="encryptMessage" name="encryptMessage">
       <div class="form-group">
         <label for="InputEmail" class="hidden-xs hidden-sm hidden-md">Your Email</label>
         <input type="email" class="form-control" id="InputEmail" name="_replyto" placeholder="Bob@bob.com" required="">
@@ -19,7 +19,7 @@
         <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter your message this will auto-magically be encrypted." required=""></textarea>
       </div>
 
-      <input type="submit" name="submit" id="submit" value="Loading PGP key..." class="btn btn-info btn-block btn-success" disabled="true">
+      <input name="submitBtn" id="submitBtn" value="Loading PGP key..." class="btn btn-info btn-block btn-success" disabled="true">
 
       <input type="hidden" name="_next" value=".#thankyou">
       <input type="hidden" name="_subject" value="New Encrypted Message">
@@ -50,14 +50,14 @@
           key = r;
         })
         .done(function() {
-          encForm.find('input[type="submit"]')
+          encForm.find('#submitBtn')
           .prop('disabled', false)
           .attr('value', "Auto-Encypt + Send");
         })
         .fail(function() {
            alert( "Could not load key properly alert the recipient through direct contact!" );
         });
-        encForm.find('input[type="submit"]').click(function(e) {
+        encForm.find('#submitBtn').click(function(e) {
           e.preventDefault();
           if (key == '') {
             alert('Key was not loaded');
@@ -79,8 +79,9 @@
                   return false;
                 }
                 encForm.find('#message').val(result_string);
-                encForm.submit();
-                return;
+                console.log(encForm);
+                $('#encryptMessage').submit();
+                return true;
               });
             }
           });
