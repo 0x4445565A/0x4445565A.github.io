@@ -1,5 +1,7 @@
 <div flex id="content">
-  <div ng-repeat="post in blog.posts" class="post-block">
+  <ul>
+  <li ng-repeat="post in blog.posts" class="post-block">
     <a href="#/articles/{{post.id}}">{{post.title}}</a>
-  </div>
+  </li>
+  </ul>
 </div>
