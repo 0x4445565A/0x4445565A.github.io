@@ -58,9 +58,9 @@
            alert( "Could not load key properly alert the recipient through direct contact!" );
         });
         encForm.find('input[type="submit"]').click(function(e) {
+          e.preventDefault();
           if (key == '') {
             alert('Key was not loaded');
-            e.preventDefault();
             return false;
           }
           kbpgp.KeyManager.import_from_armored_pgp({
@@ -76,7 +76,6 @@
                 if (err) {
                   alert("Error encrypting, sorry!");
                   console.log(err);
-                  e.preventDefault();
                   return false;
                 }
                 encForm.find('#message').val(result_string);
