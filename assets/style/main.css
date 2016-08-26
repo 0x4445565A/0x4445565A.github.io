@@ -193,3 +193,7 @@ pre.blog-content img {
 pre.blog-content {
   padding-bottom: 5em;
 }
+
+md-icon.avatar[md-svg-icon="systems"] svg g path {
+  fill: #000;
+}
