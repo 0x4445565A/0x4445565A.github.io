@@ -51,9 +51,16 @@
           templateUrl : "./assets/templates/index.html",
           controller : "NavigationController as nav",
         })
-        .when("/article/:id", {
+        .when("/articles", {
+            templateUrl : "./assets/templates/blog-list.html",
+            controller : "BlogController as blog",
+        })
+        .when("/articles/:id", {
             templateUrl : "./assets/templates/blog.html",
             controller : "BlogController as blog",
+        })
+        .otherwise({
+          redirectTo: '/',
         });
     })
     .config(function($mdThemingProvider, $mdIconProvider){
