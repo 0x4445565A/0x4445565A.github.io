@@ -29,13 +29,11 @@
       </div>
     </noscript>
     <system-nav layout="row"></system-nav>
-    <md-content flex>
-      <mock-editor></mock-editor>
-      <projects></projects>
-      <span style="color:rgba(0, 0, 0, 0.2); padding: 1em; float: right">XOR(0x4445565A, 0x5241565A);</span>
+    <md-content flex ng-view>
     </md-content>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
@@ -44,8 +42,20 @@
   <script src="./js/jquery.raptorize.1.0.js"></script>
   <script src="./js/navigation.js"></script>
   <script src="./js/navigationController.js"></script>
+  <script src="./js/blogController.js"></script>
   <script type="text/javascript">    
-    angular.module('TehBmar', ['ngMaterial', 'navigation'])
+    angular.module('TehBmar', ['ngRoute', 'ngMaterial', 'navigation'])
+    .config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+          templateUrl : "./assets/templates/index.html",
+          controller : "NavigationController as nav",
+        })
+        .when("/article/:id", {
+            templateUrl : "./assets/templates/blog.html",
+            controller : "BlogController as blog",
+        });
+    })
     .config(function($mdThemingProvider, $mdIconProvider){
     $mdIconProvider
       .icon("menu", "./assets/svg/menu.svg", 24)
