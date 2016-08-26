@@ -65,21 +65,31 @@
           'link': 'http://github.com/0x4445565A',
           'label': '0x4445565A@GitHub',
           'icon': 'github',
+          'target': "_blank",
         },
         {
           'link': 'https://www.linkedin.com/in/brandon-martinez-70497831',
           'label': 'LinkedIn',
           'icon': 'linkedin',
+          'target': "_blank",
         },
         {
           'link': 'http://twitter.com/0x4445565A',
           'label': '0x4445565A@Twitter',
           'icon': 'twitter',
+          'target': "_blank",
         },
         {
           'link': 'http://keybase.io/bmar',
           'label': 'BMAR@KeyBase.io',
           'icon': 'keybase',
+          'target': "_blank",
+        },
+        {
+          'link': '#/articles',
+          'label': 'Articles',
+          'icon': 'systems',
+          'target': "",
         },
       ];
     }
