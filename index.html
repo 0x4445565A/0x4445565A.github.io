@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./assets/style/main.css">
   <meta charset="utf-8">
   <base href="/">
+  <meta name="fragment" content="!">
   <script>
     if (window.opener) {
       window.opener.location = "http://ibreak.systems/?referrer="+document.referrer;
@@ -69,7 +70,8 @@
         .otherwise({
           redirectTo: '/',
         });
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('!');
     })
     .config(function($mdThemingProvider, $mdIconProvider){
     $mdIconProvider
