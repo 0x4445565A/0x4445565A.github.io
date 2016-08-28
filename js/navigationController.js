@@ -86,7 +86,7 @@
           'target': "_blank",
         },
         {
-          'link': '#/articles',
+          'link': '/#articles',
           'label': 'Articles',
           'icon': 'systems',
           'target': "",
