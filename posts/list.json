@@ -8,5 +8,10 @@
     "title":"Quick guide on Keybase Messages",
     "body":"kbpgpMessage",
     "id":"quick-kbpgp"
+  },
+  "keybase-on-sks":{
+    "title":"How to Quickly Send Keys to SKS",
+    "body":"kbSKS",
+    "id":"keybase-on-sks"
   }
 }

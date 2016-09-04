@@ -1,0 +1,14 @@
+    From what I have witness it seems like Keybase is creating a small rift between long time PGP users and those adopting the technology for the first time(Or those who are now MORE into PGP due to Keybase's work).  Myself, I am most definitely newer to PGP.  I have been around the concepts and understand how it works, but I didn't bother with a PGP key until Keybase came around.
+
+    I feel like this shift happens with PGP users because they have a very narrow way of how PGP should be implimented.  The issue with this is that no one uses the current implimentation, and by using I mean more than a few dudes having a key signing party.  Another thing that PGP users cling onto is the idea of needing SKS key servers.  There are a few reasons to use one but for the most part Keybase doesn't need them.  Hosting all of the Keybase keys on a single server is only needed for a few tiny amount of use cases, so instead of trying to do this I came up with a simple solution...
+
+    Submit your own keys to all the SKS servers you want!  I wrote a simple command that downloads your Keybase user's key(or any user) and uploads it to the MIT key server as well as Key-server.io.  If you are interested in it you can find it <a href="https://gist.github.com/0x4445565A/e95ba12e2b8a4317fa63965de2304320" target="_blank">here</a>.
+
+    All it does is take your key from Keybase and post the contents to the public facing forms.  Super easy and super fast.  Now there is one less thing to complain about.  Now I just need to crawl keybase and send all of the keys to the in question servers!
+
+    <pre>
+    <code class="bash">
+echo -n "What is your Keybase Username? [ENTER] " && read KEYBASE_USER && KEYBASE_KEY=`curl -s https://keybase.io/${KEYBASE_USER}/key.asc` \
+&& curl -X POST --data-urlencode "keytext=${KEYBASE_KEY}" https://pgp.mit.edu/pks/add | grep -io "Key block added to key server database" \
+&& curl -X POST --data-urlencode "keytext=${KEYBASE_KEY}" https://pgp.key-server.io/pks/add | grep -io "Key block added to key server database"
+    </code></pre>

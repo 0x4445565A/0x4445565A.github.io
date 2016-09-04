@@ -41,6 +41,13 @@
         $http.get("./posts/" + posts[$routeParams.id].body + ".txt")
         .then(function(response) {
           self.post.body = response.data;
+        })
+        .then(function() {
+          setTimeout(function(){
+            $('pre code').each(function(i, block) {
+              hljs.highlightBlock(block);
+            });
+          }, 100);
         });
       } else {
         self.post.title = "404";
