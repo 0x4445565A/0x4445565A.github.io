@@ -1,4 +1,25 @@
 (function(){
   'use strict';
   angular.module('navigation', [ 'ngMaterial']);
+  console.log("###  ## ########  ###### ###  ##");
+  console.log("###  ##  ###  ## ###     ### ## ");
+  console.log("#######  ####### ###     #####  ");
+  console.log("###  ##  ###  ## ###     ### ## ");
+  console.log("###  ##  ###  ##  ###### ###  ##");
+  console.log("###  ");
+  console.log("               ");
+  console.log("######## ###  ## ########");
+  console.log("  ###   ###  ##  ###    ");
+  console.log("  ###   #######  #######");
+  console.log("  ###   ###  ##  ###    ");
+  console.log("  ###   ###  ##  #######");
+  console.log("        ###             ");
+  console.log("                        #                        ");
+  console.log("        ###             ##                       ");
+  console.log("######  ###    ######## ###  ## ######## ########");
+  console.log("###  ## ###     ###  ## #### ##  ###        ###  ");
+  console.log("######  ###     ####### #######  #######    ###  ");
+  console.log("###     ###     ###  ## ### ###  ###        ###  ");
+  console.log("###     ####### ###  ## ###  ##  #######    ###  ");
+  console.log("                              #");
 })();

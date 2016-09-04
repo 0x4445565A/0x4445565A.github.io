@@ -23,7 +23,7 @@
     }
   </script>
 </head>
-<body ng-app="TehBmar" layout="column" ng-controller="NavigationController as nav">
+<body ng-app="IBreakSystems" layout="column" ng-controller="NavigationController as nav">
   <system-toolbar></system-toolbar>
   <div flex layout="row">
     <noscript>
@@ -52,7 +52,7 @@
   <script src="./js/navigationController.js"></script>
   <script src="./js/blogController.js"></script>
   <script type="text/javascript">    
-    angular.module('TehBmar', ['ngRoute', 'ngMaterial', 'navigation'])
+    angular.module('IBreakSystems', ['ngRoute', 'ngMaterial', 'navigation'])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
         .when("/", {
