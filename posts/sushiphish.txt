@@ -1,0 +1,13 @@
+	There is something special about programmers and their desire to automate things.  From a small hostel in Vietnam I was browsing Twitter in the late night in which I came across <a href="https://twitter.com/executemalware/status/773576402343985152" target="_blank">this post</a>.  Upon reading it I was impressed by the dedication of @ExecuteMalware as well as his method of discovering fresh phishing domains.
+
+	Personally I haven't fallen for a phishing scam(As far as I'm aware), but I still really don't like them.  I put them right at the Nigerian prince level, but the worse thing about them is that they are really effective.  This is why what ExecuteMalware is doing is so important, the quicker you down a Phish scam the less people are conned.
+
+	In his article his method imvolves using text editors and filters and other things that are just a down right pain in the ass, so I wrote a tool that automates most of the leg work for him.  At the most he has to press y, n, Enter, and alt+tab which compared to the previous amount of actions is a huge improvement.
+
+	The tool I made is called <a href="https://github.com/0x4445565A/sushiphish">sushiphish</a>... Well I thought it was clever...  The idea is the newly register domain lists from places like <a href="https://www.whoxy.com/newly-registered-domains/">Whoxy</a> are first put through a filter of "hot words".  These are things like paypal, apple, amazon, etc if the domain has ANY of these words it marks them.
+
+	This is where things slow down, each domain has to be reviewed to see if it should remain in the list (So instead of looking at 10,000 domains you only look at 150).  After all of this you are left with a handful of REALLY sketchy sounding domains.  Each of these domains have their IP, DNS, Hostname, and WHOIS recorded and the user is prompted to see if they want to open the domain in their web browser. If they do sushiphish opens the default browser, if upon opening the page and it seems legitimate you are prompted if you want to remove the site from the suspicious site list.
+
+	At the end of this you are left with a handful of phishing sites.  This is where things get fun, you can try to scam them or you can just be a cool dude and report them via WHOIS abuse or to the host.
+
+	At the end of this the code isn't special at all, it does what it does and that's about it.  It's easy to extend so you can grab more info but that's about it.  I just think it's a great example at how far devs will go to not have to do manual tasks.  And with that, happy Phish hunting!  Let me know <a href="https://twitter.com/0x4445565a">@0x4445565a</a> if you catch anything good!

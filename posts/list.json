@@ -13,5 +13,10 @@
     "title":"How to Quickly Send Keys to SKS",
     "body":"kbSKS",
     "id":"keybase-on-sks"
+  },
+  "sushiphish":{
+    "title":"How to Catch Fresh Phish",
+    "body":"sushiphish",
+    "id":"sushiphish",
   }
 }
