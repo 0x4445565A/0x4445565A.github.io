@@ -121,6 +121,14 @@
           linkTitle: 'BadDev',
         },
         {
+          title: 'SushiPhish',
+          image: './assets/images/sushiphish.png',
+          tags: 'Go, Security',
+          body: 'This is a tool designed to aid users hunting down and reporting phishing and scam sites.  It does this by helping the user quickly gather and filter tens of thousands of domains into a handful of dangerous phishing scams.  Exports to CSV for easy reporting.',
+          link: 'https://github.com/0x4445565A/sushiphish',
+          linkTitle: 'SushiPhish',
+        },
+        {
           title: 'BadDev',
           image: './assets/images/baddev.png',
           tags: 'PHP, MySQL, HTML, CSS, Security',
