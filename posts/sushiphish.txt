@@ -11,3 +11,5 @@
 	At the end of this you are left with a handful of phishing sites.  This is where things get fun, you can try to scam them or you can just be a cool dude and report them via WHOIS abuse or to the host.
 
 	At the end of this the code isn't special at all, it does what it does and that's about it.  It's easy to extend so you can grab more info but that's about it.  I just think it's a great example at how far devs will go to not have to do manual tasks.  And with that, happy Phish hunting!  Let me know <a href="https://twitter.com/0x4445565a">@0x4445565a</a> if you catch anything good!
+
+	<img src="/assets/images/action-sushiphish.png" alt="Cutting up phishing sites for fun and profit!">
