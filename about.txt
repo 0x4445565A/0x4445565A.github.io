@@ -19,7 +19,7 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
     BASH,
     Golang,
     Javascript,
-    Linux (Debian, Ubuntu, Fedora),
+    Linux,
     PHP,
     Python,
   ],
