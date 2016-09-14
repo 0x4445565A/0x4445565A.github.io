@@ -17,15 +17,13 @@ In the next few years I see myself primarily developing with MVC JS frameworks. 
   ],
   <h3>StrongSkills</h3>: [
     BASH,
-    CSS,
-    HTML,
+    Golang,
     Javascript,
     Linux (Debian, Ubuntu, Fedora),
     PHP,
     Python,
   ],
   <h3>SomeSkill</h3>: [
-    GoLang,
     AngularJS,
     MeteorJS,
     NodeJS,
