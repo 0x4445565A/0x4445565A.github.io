@@ -129,6 +129,14 @@
           linkTitle: 'SushiPhish',
         },
         {
+          title: 'PhrackReader',
+          image: './assets/images/phrackreader.png',
+          tags: 'Go, Security, Concurrency, UI',
+          body: 'Being a fan of the long time online publication "Phrack" I decided I was bored with the lengthy process of trying to download and read articles.  So I wrote a tool that automates the process of downloading and decompressing the issue.  It also displays it in a super sweet CLI.',
+          link: 'https://github.com/0x4445565A/phrack-reader',
+          linkTitle: 'PhrackReader',
+        },
+        {
           title: 'BadDev',
           image: './assets/images/baddev.png',
           tags: 'PHP, MySQL, HTML, CSS, Security',
