@@ -9,9 +9,9 @@
 
 I have spent the last decade working with a myriad of technologies.  These have ranged from older languages like Perl all of the way to fancy new MVC/MVW Javascript frameworks like AngularJS and Meteor.I also have extensive experience in both offensive and defensive security for applications and systems.  Currently I have been spending most of my time developing in GoLang, NodeJS, and AngularJS.  I have really fallen in love with these tools.
 
-In the next few years I see myself primarily developing with MVC JS frameworks or working at a lower level with Go.</p>  """,
+Currently, I see myself primarily developing with Go.  I have an interest in most things Go is capable of, I love the speed and proficiency that it works at.  Most likely with Go I would be a good fit in automation or embedded systems.</p>  """,
   <h3>Contact</h3>: [
-    root@ibreak.systems,
+    brandon@ibreak.systems,
     <a href="https://www.linkedin.com/in/brandon-martinez-70497831" target="_blank">LinkedIn</a>,
     <a href="http://twitter.com/0x4445565a" target="_blank">Twitter</a>,
   ],
@@ -25,6 +25,7 @@ In the next few years I see myself primarily developing with MVC JS frameworks o
   ],
   <h3>SomeSkill</h3>: [
     AngularJS,
+    Front Flips,
     MeteorJS,
     NodeJS,
   ],
