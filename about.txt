@@ -10,6 +10,7 @@
 I have spent the last decade working with a myriad of technologies.  These have ranged from older languages like Perl all of the way to fancy new MVC/MVW Javascript frameworks like AngularJS and Meteor.I also have extensive experience in both offensive and defensive security for applications and systems.  Currently I have been spending most of my time developing in GoLang, NodeJS, and AngularJS.  I have really fallen in love with these tools.
 
 Currently, I see myself primarily developing with Go.  I have an interest in most things Go is capable of, I love the speed and proficiency that it works at.  Most likely with Go I would be a good fit in automation or embedded systems.</p>  """,
+  <h3>Resume:</h3> "<a href="/resume.pdf" target="_blank">Current Résumé</a>",
   <h3>Contact</h3>: [
     brandon@ibreak.systems,
     <a href="https://www.linkedin.com/in/brandon-martinez-70497831" target="_blank">LinkedIn</a>,
