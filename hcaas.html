@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Send Me a message</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <form role="form" action="" method="post" id="hcaas" name="hcaas">
+      <div class="form-group">
+        <label for="nameToken" class="hidden-xs hidden-sm hidden-md">Your Name</label>
+        <input type="text" class="form-control" id="nameToken" name="nameToken" placeholder="Cool Person" required="">
+      </div>
+      <input name="submitBtn" id="submitBtn" value="Get Message" class="btn btn-info btn-block btn-success">
+    </form>
+    <h3 class="message"></h3>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('form #submitBtn').click(function () {
+          var data = {}
+          if ($('#nameToken').val()) {
+            data = {token : $('#nameToken').val() }
+          }
+          $.get('http://hcaas.ibreak.systems', data, function() {
+            console.log('sending');
+          })
+          .done(function(r) {
+            $('.message').text(r);
+          })
+          .fail(function() {
+            alert("Service might be down yell at me @4445565a");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -23,5 +23,10 @@
     "title":"How to Block Attackers with a Honeyport",
     "body":"portanoia",
     "id":"portanoia"
+  },
+  "hcaas":{
+    "title":"Human Connection As A Service",
+    "body":"hcaas",
+    "id":"hcaas"
   }
 }
