@@ -28,6 +28,6 @@
   ],
   <h3>Keys</h3>: {
     PGP-Public: <a href="https://keybase.io/bmar/key.asc" target="_blank">BABCE3158E5BB764</a>,
-    SSH-RSA-Public: <a href="https://bmar.keybase.pub/keys/public_key" target="_blank">MD5:8F:DC:9D:60:71:F7</a>,
+    SSH-RSA-Public: <a href="https://bmar.keybase.pub/keys/public_key" target="_blank">MD5:65:18:b7:d2:fd:f1:a5:07:02:c8:67:e5:bc:6e:ae:e9</a>,
   },
 };
