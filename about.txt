@@ -20,10 +20,10 @@
     Offensive Security, 
   ],
   <h3>SomeSkill</h3>: [
-    frontEnd               <span class="secondary-text-color">// Please don't send me frontend jobs</span>,
-    Front Flips,
+    frontEnd,              <span class="secondary-text-color">// Please don't send me frontend jobs</span>
+    FrontFlips,
     PHP,                   <span class="secondary-text-color">// Please don't send me PHP jobs</span>
-    Physical Fabrication,
+    PhysicalFabrication,
   ],
   <h3>Keys</h3>: {
     PGP-Public: <a href="https://keybase.io/bmar/key.asc" target="_blank">BABCE3158E5BB764</a>,
