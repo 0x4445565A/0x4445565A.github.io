@@ -18,10 +18,9 @@
     Linux,
     BASH,
     Offensive Security, 
-    Javascript,
   ],
   <h3>SomeSkill</h3>: [
-    AngularJS,
+    frontEnd               <span class="secondary-text-color">// Please don't send me frontend jobs</span>,
     Front Flips,
     PHP,                   <span class="secondary-text-color">// Please don't send me PHP jobs</span>
     Physical Fabrication,
