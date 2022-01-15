@@ -10,7 +10,7 @@
   <h3>Contact</h3>: [
     brandon@ibreak.systems,
     <a href="https://www.linkedin.com/in/brandon-martinez-70497831" target="_blank">LinkedIn</a>,
-    <a href="http://twitter.com/0x4445565a" target="_blank">Twitter</a>,
+    <a href="https://twitter.com/0x4445565a" target="_blank">Twitter</a>,
   ],
   <h3>StrongSkills</h3>: [
     Golang,

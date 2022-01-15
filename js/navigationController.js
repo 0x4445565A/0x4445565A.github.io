@@ -62,7 +62,7 @@
     function navigationItems() {
       return [
         {
-          'link': 'http://github.com/0x4445565A',
+          'link': 'https://github.com/0x4445565A',
           'label': '0x4445565A@GitHub',
           'icon': 'github',
           'target': "_blank",
@@ -74,13 +74,13 @@
           'target': "_blank",
         },
         {
-          'link': 'http://twitter.com/0x4445565A',
+          'link': 'https://twitter.com/0x4445565A',
           'label': '0x4445565A@Twitter',
           'icon': 'twitter',
           'target': "_blank",
         },
         {
-          'link': 'http://keybase.io/bmar',
+          'link': 'https://keybase.io/bmar',
           'label': 'BMAR@KeyBase.io',
           'icon': 'keybase',
           'target': "_blank",
