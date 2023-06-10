@@ -1,4 +1,5 @@
 source: "."
+destination: docs
 site:
   title: iBreak.System
   description: Personal site of Brandon Martinez
