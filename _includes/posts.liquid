@@ -1,6 +1,6 @@
 <div class="posts">
 {% for post in collections.posts.pages %}
-    {% if post.is_draft == false %}
+    {% if post.data.hide == false %}
 <article>
 <div class="post-image"><img src="{{ post.data.img }}"></div>
 <div class="post-body">

@@ -4,6 +4,7 @@ data:
     img: /assets/posts/img/static.png
     summary: Kill the static site, long live the static site!
     tags: Rust, HTML, CSS, Liquid
+    hide: false
 published_date: 2023-06-10 02:51:12.652100849 +0000
 layout: post.liquid
 is_draft: false

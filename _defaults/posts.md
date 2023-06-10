@@ -4,6 +4,7 @@ data:
     img: assets/posts/img/test.png
     summary: A post about cats
     tags: Sometags
+    hide: false
 layout: post.liquid
 is_draft: true
 ---
