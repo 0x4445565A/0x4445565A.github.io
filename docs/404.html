@@ -26,14 +26,14 @@
           <span class="line line3"></span>
         </div>
         <div class="logo">
-          <h1>Brandon @ iBreak.Systems</h1>
+          <a href="/"><h1>Brandon @ iBreak.Systems</h1></a>
         </div>
         <div class="menu-items">
           <li>
             <a href="/">HOME</a>
           </li>
           <li>
-            <a href="/posts">PROJECTS</a>
+            <a href="/projects">PROJECTS</a>
           </li>
           <li>
             <a href="/resume.pdf">RESUME</a>
@@ -104,11 +104,15 @@
         <ul>
         
           
-            <li><a href="/posts/2023-06-10-sushi-phish.html">Sushi Phish Tool Retro</a></li>
+            <li><a href="/projects/2023-06-10-static-site.html">Moved to Cobalt</a></li>
           
         
           
-            <li><a href="/posts/2023-06-10-static-site.html">Moved to Cobalt</a></li>
+            <li><a href="/projects/2023-06-10-sushi-phish.html">Sushi Phish Tool Retro</a></li>
+          
+        
+          
+            <li><a href="/projects/index.html">Brandon @ iBreak.systems:/projects</a></li>
           
         
       </ul>
@@ -149,7 +153,7 @@
     });
 
     var x = document.getElementById("editor");
-    x.querySelector(".editor-body pre").innerHTML = x.querySelector(".editor-body pre").innerHTML.replace("RESUME_LINK", "<a href=resume.pdf target=_blank>resume.pdf</a>");
+    x.querySelector(".editor-body pre").innerHTML = x.querySelector(".editor-body pre").innerHTML.replace("RESUME_LINK", "<a href=/resume.pdf target=_blank>resume.pdf</a>");
 
     let minElement = document.getElementById("minimize-button");
     minElement.addEventListener("click", function() {

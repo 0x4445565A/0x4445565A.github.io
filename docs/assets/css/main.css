@@ -22,8 +22,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 62px;
-    line-height: 50px;
+    height: 1.2rem;
+
 }
 
 .navbar .menu-items {
@@ -32,6 +32,14 @@ body {
 
 .navbar .nav-container li {
     list-style: none;
+}
+
+.navbar .nav-container .logo a {
+    text-decoration: none;
+    color: #dfdfdf;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0;
 }
 
 .navbar .nav-container a {
@@ -375,6 +383,8 @@ main {
     display: flex;
     justify-content: space-evenly;
     padding-top: 2em;
+    position: relative;
+    z-index: 1;
 }
 
 .posts article {
@@ -383,6 +393,8 @@ main {
     max-width: 400px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    background: #BFC9D9;
+    z-index: -2;
 }
 
 .posts article .post-image {
@@ -405,12 +417,12 @@ main {
     object-fit: cover;
     transform: scaleY(2) skewY(-10deg);
     z-index: -1;
+    max-width: 100%;
 }
 
 .posts article .post-body {
     padding: 1em;
     font-size: 1.2em;
-    background: #BFC9D9;
 }
 
 .posts article .post-tags {

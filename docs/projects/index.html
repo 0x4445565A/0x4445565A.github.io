@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Brandon @ iBreak.Systems</title>
+    <title>Brandon @ iBreak.systems:/projects</title>
     <meta charset="utf-8">
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -93,8 +93,9 @@
       <div class="editor-footer"></div>
     </div>
   </main>
-    <div class="content">
-      <h1>// Projects</h1>
+    <div class="post-content">
+      <div class="content">
+        <h1>// Projects</h1>
 <div class="posts">
 <article>
 <div class="post-image"><img src="/assets/posts/img/static.png"></div>
@@ -115,6 +116,30 @@
 </div>
 </article>
 </div>
+<style>
+    .side-bar {
+        display: none;
+    }
+</style>
+      </div>
+      <div class="side-bar">
+        <h3>More Projects</h3>
+        <ul>
+        
+          
+            <li><a href="/projects/2023-06-10-static-site.html">Moved to Cobalt</a></li>
+          
+        
+          
+            <li><a href="/projects/2023-06-10-sushi-phish.html">Sushi Phish Tool Retro</a></li>
+          
+        
+          
+            <li><a href="/projects/index.html">Brandon @ iBreak.systems:/projects</a></li>
+          
+        
+      </ul>
+      </div>
     </div>
     <footer>
     <div>
@@ -165,5 +190,10 @@
   });
 </script>
 <script src="/assets/js/navigation.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("editor").classList.toggle("minimize");
+      });
+    </script>
   </body>
 </html>
