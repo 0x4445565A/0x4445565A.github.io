@@ -1,0 +1,18 @@
+---
+title: Brandon @ iBreak.systems:/projects
+data:
+    img: /assets/posts/img/test.png
+    summary: The index page
+    tags: Ignore its the index page
+layout: post.liquid
+is_draft: true
+---
+# // Projects
+
+{% include "posts.liquid" %}
+
+<style>
+    .side-bar {
+        display: none;
+    }
+</style>

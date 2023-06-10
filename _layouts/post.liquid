@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    {% include "head.liquid" %}
+  </head>
+  <body>
+    {% include "nav.liquid" %}
+    {% include "editor.liquid" %}
+    <div class="post-content">
+      <div class="content">
+        {{ page.content }}
+      </div>
+      <div class="side-bar">
+        <h3>More Projects</h3>
+        <ul>
+        {% for post in collections.posts.pages %}
+          {% if post.is_draft == false %}
+            <li><a href="/{{ post.permalink }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      </div>
+    </div>
+    {% include "footer.liquid" %}
+    {% include "js.liquid" %}
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("editor").classList.toggle("minimize");
+      });
+    </script>
+  </body>
+</html>

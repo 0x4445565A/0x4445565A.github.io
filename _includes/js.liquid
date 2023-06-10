@@ -1,0 +1,23 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="/assets/js/jquery.raptorize.1.0.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+
+    var x = document.getElementById("editor");
+    x.querySelector(".editor-body pre").innerHTML = x.querySelector(".editor-body pre").innerHTML.replace("RESUME_LINK", "<a href=resume.pdf target=_blank>resume.pdf</a>");
+
+    let minElement = document.getElementById("minimize-button");
+    minElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    let maxElement = document.getElementById("maximize-button");
+    maxElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    $('.editor-header .editor-ui .close').raptorize();
+  });
+</script>
+<script src="/assets/js/navigation.js"></script>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Brandon @ iBreak.Systems</title>
+    <meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+  </head>
+  <body>
+    <nav>
+    <div class="navbar">
+      <div class="container nav-container">
+        <input
+          class="checkbox"
+          type="checkbox"
+          name=""
+          id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <div class="logo">
+          <h1>Brandon @ iBreak.Systems</h1>
+        </div>
+        <div class="menu-items">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+          <li>
+            <a href="/posts">PROJECTS</a>
+          </li>
+          <li>
+            <a href="/resume.pdf">RESUME</a>
+          </li>
+          <li>
+            <a href="https://github.com/0x4445565a" target="_blank" rel="nofollow">GITHUB</a>
+          </li>
+          <li>
+            <a href="https://www.codewars.com/users/0x4445565A" target="_blank" rel="nofollow">CODEWARS</a>
+          </li>
+          <li>
+            <a href="#">LINKEDIN</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <main>
+    <div id="editor">
+      <div class="editor-header">
+        <div class="editor-ui">
+          <div class="ui-button close"></div>
+          <div class="ui-button minimize" id="minimize-button"></div>
+          <div class="ui-button maximize" id="maximize-button"></div>
+        </div>
+        ~/About.json
+      </div>
+      <div class="editor-body">
+        <pre>
+# A quick rundown of current information
+{
+  about: """
+  I'm Brandon Martinez a Sr. software engineer who specializes in ETL pipelines, system tools, and high availiblty services.  My favorite projects usually involve creating tools for other developers.  I have a passion for low level tech and efficiency.
+  """,
+  resume: "RESUME_LINK",
+  contact: [
+    "brandon@ibreak.systems"
+  ],
+  strong_skills: [
+    "golang",
+    "rust",
+    "python",
+    "linux",
+    "bash",
+    "offensive security"
+  ],
+  minor_skills: [
+    "electronics engineering",
+    "fusion 360"
+  ]
+}
+        </pre>
+        <div class="editor-scroll">
+          <div class="editor-scroll-scrub"></div>
+        </div>
+      </div>
+      <div class="editor-footer"></div>
+    </div>
+  </main>
+    <div class="content">
+      <h1>// Projects</h1>
+<div class="posts">
+<article>
+<div class="post-image"><img src="/assets/posts/img/sushi.png"></div>
+<div class="post-body">
+    <a href="posts/2023-06-10-sushi-phish.html"><h2>Sushi Phish Tool Retro</h2></a>
+    <p class="post-tags">Go, security</p>
+    <p>A tool used to detect potential phishing domains.</p>
+    <div class="post-link"><a href="posts/2023-06-10-sushi-phish.html">Read more...</a></div>
+</div>
+</article>
+<article>
+<div class="post-image"><img src="/assets/posts/img/static.png"></div>
+<div class="post-body">
+    <a href="posts/2023-06-10-static-site.html"><h2>Moved to Cobalt</h2></a>
+    <p class="post-tags">Rust, HTML, CSS, Liquid</p>
+    <p>Kill the static site, long live the static site!</p>
+    <div class="post-link"><a href="posts/2023-06-10-static-site.html">Read more...</a></div>
+</div>
+</article>
+</div>
+    </div>
+    <footer>
+    <div>
+      <h2>Test</h2>
+      <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Test</h2>
+      <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Test</h2>
+      <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+      </ul>
+    </div>
+  </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="/assets/js/jquery.raptorize.1.0.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+
+    var x = document.getElementById("editor");
+    x.querySelector(".editor-body pre").innerHTML = x.querySelector(".editor-body pre").innerHTML.replace("RESUME_LINK", "<a href=resume.pdf target=_blank>resume.pdf</a>");
+
+    let minElement = document.getElementById("minimize-button");
+    minElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    let maxElement = document.getElementById("maximize-button");
+    maxElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    $('.editor-header .editor-ui .close').raptorize();
+  });
+</script>
+<script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

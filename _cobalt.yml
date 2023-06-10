@@ -1,0 +1,7 @@
+source: "."
+site:
+  title: iBreak.System
+  description: Personal site of Brandon Martinez
+  base_url: https://ibreak.systems
+posts:
+  rss: rss.xml
