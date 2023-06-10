@@ -18,14 +18,6 @@ body {
     box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 1.2rem;
-
-}
-
 .navbar .menu-items {
     display: flex;
 }
@@ -57,7 +49,8 @@ body {
 .nav-container {
     display: block;
     position: relative;
-    height: 60px;
+    height: 4.5rem;
+    line-height: 4rem;
 }
 
 .nav-container .checkbox {
@@ -210,7 +203,7 @@ main {
     border: #141511 1px solid;
     position: relative;
     min-height: 200px;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     max-height: 1000px;
     transition: max-height linear .25s;
 }
@@ -422,12 +415,12 @@ main {
 
 .posts article .post-body {
     padding: 1em;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .posts article .post-tags {
     color: rgba(0, 0, 0, 0.5);
-    font-size: .7em;
+    font-size: .7rem;
     padding-bottom: 1.5em;
     padding-top: 0;
 }
@@ -435,7 +428,7 @@ main {
 .posts .post-link {
     width: 100%;
     text-align: right;
-    font-size: .8em;
+    font-size: .8rem;
 }
 
 footer {
@@ -444,7 +437,7 @@ footer {
     color: #F3F3F6;
     display: flex;
     justify-content: space-evenly;
-    font-size: .9em;
+    font-size: .9rem;
 }
 
 footer div {
@@ -454,4 +447,41 @@ footer div {
 
 footer ul {
     list-style: none;
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 1.5rem;
+    }
+
+    .post-content .side-bar {
+        display: none;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    #editor {
+        width: 100%;
+    }
+
+    .editor-body {
+        max-height: 1500px;
+    }
+
+    #editor pre {
+        font-size: 2rem;
+    }
+
+    .post-content h1,
+    .post-content h2,
+    .post-content h3,
+    .post-content h4 {
+        padding: .5rem 0 0.5rem 0;
+    }
+
+    footer {
+        font-size: 1.5rem;
+    }
 }
