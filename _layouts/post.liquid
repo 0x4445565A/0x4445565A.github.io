@@ -15,7 +15,7 @@
         <h3>More Projects</h3>
         <ul>
         {% for post in collections.posts.pages %}
-          {% if post.is_draft == false %}
+          {% if post.data.hide == false %}
             <li><a href="/{{ post.permalink }}">{{ post.title }}</a></li>
           {% endif %}
         {% endfor %}
