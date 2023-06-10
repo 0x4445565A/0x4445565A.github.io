@@ -3,8 +3,4 @@
 [![forthebadge](http://forthebadge.com/images/badges/uses-badges.svg)](http://forthebadge.com)
 # iBreak.systems Code Repo
 
-I decided to turn my domain iBreak.systems into a portfolio site instead of a blog that no one reads!
-
-It's a simple page that I built in a day using AngularJS and AngularMaterials.
-
-Not much else to add, oh it also has Raptor support, just click on the "close" button on the mock Sublime editor.
+I needed a spot to place project write ups.  I killed the old hand rolled Angular CMS in favor of Cobalt.  I take advantage of github pages using root OR /docs for the site, so Cobalt exports to the /docs dir.  It's dirty but it works.
