@@ -5,4 +5,5 @@ site:
   description: Personal site of Brandon Martinez
   base_url: https://ibreak.systems
 posts:
+  dir: projects
   rss: rss.xml

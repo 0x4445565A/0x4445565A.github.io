@@ -5,7 +5,7 @@ data:
     summary: The index page
     tags: Ignore its the index page
 layout: post.liquid
-is_draft: true
+is_draft: false
 ---
 # // Projects
 
