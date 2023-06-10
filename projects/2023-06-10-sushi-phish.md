@@ -1,11 +1,12 @@
 ---
 title: Sushi Phish Tool Retro
+permalink: /projects/{{year}}/{{slug}}
 data:
     img: /assets/posts/img/sushi.png
     summary: A tool used to detect potential phishing domains.
     tags: Go, security
     hide: false
-published_date: 2000-06-10 02:51:19.802109062 +0000
+published_date: 2023-06-10 02:51:19.802109062 +0000
 layout: post.liquid
 is_draft: false
 ---

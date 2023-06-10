@@ -1,5 +1,6 @@
 ---
 title: Custom CMS vs Static Site
+permalink: /projects/{{year}}/{{slug}}
 data:
     img: /assets/posts/img/static.png
     summary: Kill the static site, long live the static site!

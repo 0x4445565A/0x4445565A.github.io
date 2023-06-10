@@ -1,5 +1,6 @@
 ---
 title: Hello world
+permalink: /projects/{{year}}/{{slug}}
 data:
     img: assets/posts/img/test.png
     summary: A post about cats
