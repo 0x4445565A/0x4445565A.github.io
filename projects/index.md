@@ -8,7 +8,7 @@ data:
 layout: post.liquid
 is_draft: false
 ---
-# // Projects
+# // All Projects
 
 {% include "posts.liquid" %}
 

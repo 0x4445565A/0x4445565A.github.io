@@ -10,7 +10,7 @@ published_date: 2023-06-10 19:01:19.802109062 +0000
 layout: post.liquid
 is_draft: false
 ---
-# Portanoia Retrospective
+# // Portanoia Retrospective
 In late 2016 I was experimenting with creating defensive security tools and I had a big interest in working with raw packets.  As a result I dreamt up the concept for [portanoia](https://github.com/0x4445565A/portanoia), originally it was written in python but for the learning experience I recreated a more robust version in go.
 
 The idea behind the project is simple.  Create a port and if the port gets any traffic report the connection to the user so an action can be taken.  The most common action being to push the `src` IP into iptables and block it.  The project itself was written haphazardly over the course of a week.  It was an arms race against myself.  I wrote the honeypot port.  Then I would scan it, watch it work, and keep changing [nmap](https://nmap.org/) flags until my honeypot couldn't detect the scan but the scan.

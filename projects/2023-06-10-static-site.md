@@ -10,7 +10,7 @@ published_date: 2023-06-10 02:51:12.652100849 +0000
 layout: post.liquid
 is_draft: false
 ---
-# Static Sites and Over Engineering
+# // Static Sites and Over Engineering
 
 As I was looking at my portfolio website [iBreak.Systems](https://ibreak.systems), I realized I was a little bored with the tech that was running it.  The site used to run on a custom, semi-static, CMS I wrote.  I wrote the semi-static CMS years ago when I still thought I had any interest in frontend engineering of any kind.  That has not been the case for 7 years, unless I'm backend² I'm not happy.
 
