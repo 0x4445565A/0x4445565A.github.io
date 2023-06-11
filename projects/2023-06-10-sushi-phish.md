@@ -3,14 +3,14 @@ title: Sushi Phish Tool Retro
 permalink: /projects/{{year}}/{{slug}}
 data:
     img: /assets/posts/img/sushi.png
-    summary: A tool used to detect potential phishing domains.
+    summary: A retro on a tool used to detect potential phishing domains.
     tags: Go, security
     hide: false
 published_date: 2023-06-10 02:51:19.802109062 +0000
 layout: post.liquid
 is_draft: false
 ---
-# Sushi Phish Scrapper
+# Sushi Phish Scrapper Retrospective
 
 In 2016 a security research known as ExecuteMalware documented their process on how they discover new phishing domains.  That old blog post can be read [here](https://web.archive.org/web/20170822061820/http://executemalware.com/?p=258).  The short of it is you can download a snapshot of the recently registered domain names from a service like [dnpedia](https://dnpedia.com/tlds/daily.php) and from there you can parse out domains of suspicious keywords.
 
