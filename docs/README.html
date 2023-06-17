@@ -3,3 +3,18 @@
 <a href="http://forthebadge.com"><img src="http://forthebadge.com/images/badges/uses-badges.svg" alt="forthebadge" /></a></p>
 <h1>iBreak.systems Code Repo</h1>
 <p>I needed a spot to place project write ups.  I killed the old hand rolled Angular CMS in favor of Cobalt.  I take advantage of github pages using root OR /docs for the site, so Cobalt exports to the /docs dir.  It's dirty but it works.</p>
+<h1>Build Instructions</h1>
+<p><code>cobalt build</code></p>
+<h1>Serve Pages</h1>
+<p><code>cobalt serve --drafts</code></p>
+<h1>Create And Publish Page</h1>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">cobalt new &quot;Some New Page&quot;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;"># Create a new post
+</span><span style="color:#c0c5ce;">cd projects
+</span><span style="color:#c0c5ce;">cobalt new &quot;Some New Project&quot;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;"># Publish the file
+</span><span style="color:#c0c5ce;">cobalt publish projects/filename.md```
+</span></code></pre>

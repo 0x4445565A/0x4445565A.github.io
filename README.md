@@ -4,3 +4,20 @@
 # iBreak.systems Code Repo
 
 I needed a spot to place project write ups.  I killed the old hand rolled Angular CMS in favor of Cobalt.  I take advantage of github pages using root OR /docs for the site, so Cobalt exports to the /docs dir.  It's dirty but it works.
+
+# Build Instructions
+`cobalt build`
+
+# Serve Pages
+`cobalt serve --drafts`
+
+# Create And Publish Page
+```# Create a new page
+cobalt new "Some New Page"
+
+# Create a new post
+cd projects
+cobalt new "Some New Project"
+
+# Publish the file
+cobalt publish projects/filename.md```

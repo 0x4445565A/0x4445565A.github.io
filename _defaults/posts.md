@@ -3,7 +3,7 @@ title: Hello world
 permalink: /projects/{{year}}/{{slug}}
 data:
     img: assets/posts/img/test.png
-    summary: A post about cats
+    summary: A project about something
     tags: Sometags
     hide: false
 layout: post.liquid

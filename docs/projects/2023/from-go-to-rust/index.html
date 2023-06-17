@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>From Go to Rust</title>
+    <meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+  </head>
+  <body>
+    <nav>
+    <div class="navbar">
+      <div class="nav-container">
+        <input
+          class="checkbox"
+          type="checkbox"
+          name=""
+          id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <div class="logo">
+          <a href="/"><h1>DEV. HACKER. WEIRDO.</h1></a>
+        </div>
+        <div class="menu-items">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+          <li>
+            <a href="/projects">PROJECTS</a>
+          </li>
+          <li>
+            <a href="/resume.pdf">RESUME</a>
+          </li>
+          <li>
+            <a href="https://github.com/0x4445565a" target="_blank" rel="nofollow">GITHUB</a>
+          </li>
+          <li>
+            <a href="https://www.codewars.com/users/0x4445565A" target="_blank" rel="nofollow">CODEWARS</a>
+          </li>
+          <li>
+            <a href="#">LINKEDIN</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <main>
+    <div id="editor">
+      <div class="editor-header">
+        <div class="editor-ui">
+          <div class="ui-button close"></div>
+          <div class="ui-button minimize" id="minimize-button"></div>
+          <div class="ui-button maximize" id="maximize-button"></div>
+        </div>
+        ~/About.json
+      </div>
+      <div class="editor-body">
+        <pre>
+# A quick rundown of current information
+{
+  about: """
+  I'm Brandon Martinez a Sr. software engineer who specializes in ETL pipelines, system tools, and highly availiblty services.  My favorite projects usually involve creating tools for other developers.  I have a passion for low level tech and efficiency.
+  """,
+  resume: "RESUME_LINK",
+  contact: [
+    "brandon@ibreak.systems"
+  ],
+  strong_skills: [
+    "golang",
+    "python",
+    "linux",
+    "bash",
+    "offensive security"
+  ],
+  learning: [
+    "rust",
+  ],
+  minor_skills: [
+    "electronics engineering",
+    "fusion 360",
+    "3D Printing/CNC"
+  ]
+}
+        </pre>
+        <div class="editor-scroll">
+          <div class="editor-scroll-scrub"></div>
+        </div>
+      </div>
+      <div class="editor-footer"></div>
+    </div>
+  </main>
+    <div class="post-content">
+      <div class="content">
+        <h1>From Go To Rust (Work In Progress)</h1>
+<p>I'm a long time gopher trying to become a rustacean.  This article is an attempt to document the patterns I learn, differences I spot, and maybe to compare an idiom or two.  This is mainly for my own reference but if the odd rust newbie stumbles upon this article, hello and welcome!</p>
+<h2>Why Move From Golang?</h2>
+<p>I started learning Golang as a replacement for PHP more than 7 years ago.  The language has treated me well through years of professional and personal projects.  I chose Golang because I always enjoyed coding at a lower level, I thought that as Golang matured it would create more interesting opportunities.  This has proved to not be the case given that most companies leverage Go for APIs.  As exiting as high availability APIs sourced through Airflow ETLs are, it's hard to be passionate about refactoring the same projects over and over for almost a decade across several companies.</p>
+<h2>Why Rust?</h2>
+<p>Rust has been on my radar since 2020, and every time I hear of a new milestone it piques my interest even more.  Over the last few years here are some of the articles that have attracted me to rust.  Here is a quick example of some of the recent achievements rust has accomplished.  In addition to this, it's exciting working in a language that can write APIs, kernels, logic for micro controllers, video games, and just about everything else you can write in C without all the memory issues.</p>
+<ul>
+<li><a href="https://web.archive.org/web/20230424154127/https://thenewstack.io/rust-in-the-linux-kernel/" target="_blank" rel="noopener noreferrer nofollow">Rust in the Linux kernel</a></li>
+<li><a href="https://web.archive.org/web/20230129032305/https://programming-language-benchmarks.vercel.app/go-vs-rust" target="_blank" rel="noopener noreferrer nofollow">Go vs Rust Benchmark</a></li>
+<li><a href="https://web.archive.org/web/20221230200053/https://doc.rust-lang.org/edition-guide/rust-2021/index.html" target="_blank" rel="noopener noreferrer nofollow">Rust 2021 Edition Released</a></li>
+<li><a href="https://web.archive.org/web/20230527072850/https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/" target="_blank" rel="noopener noreferrer nofollow">Rust MIT Review</a></li>
+<li><a href="https://web.archive.org/web/20230611104859/https://discord.com/blog/why-discord-is-switching-from-go-to-rust" target="_blank" rel="noopener noreferrer nofollow">Discord Switches to Rust</a></li>
+</ul>
+<br>
+<hr>
+<h1>Idioms</h1>
+<p>Here are some idiom examples for Go and Rust</p>
+<h2>Recoverable Error Handling</h2>
+<p>In <a href="https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html">Rust error handling</a> we use <code>Result&lt;T, E&gt;</code>.  Rust additionally allows the <code>?</code> operator as seen <a href="https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator">here</a> to pass the error up stream instead of needing boiler plate.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">use std::fs::File;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">fn main() {
+</span><span style="color:#c0c5ce;">    let greeting_file_result = File::open(&quot;hello.txt&quot;);
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">    let greeting_file = match greeting_file_result {
+</span><span style="color:#c0c5ce;">        Ok(file) =&gt; file,
+</span><span style="color:#c0c5ce;">        Err(error) =&gt; panic!(&quot;Problem opening the file: {:?}&quot;, error),
+</span><span style="color:#c0c5ce;">    };
+</span><span style="color:#c0c5ce;">}
+</span></code></pre>
+<p>In <a href="https://go.dev/blog/error-handling-and-go">Golang error handling</a> we use the error type to detect errors and then handle them.  Golang additionally allows single line error check <code>if err := foo(); err != nil { // Do something }</code>, but it doesn't save much boiler plate.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">func main() {
+</span><span style="color:#c0c5ce;">  f, err := os.Open(&quot;hello.txt&quot;)
+</span><span style="color:#c0c5ce;">  if err != nil {
+</span><span style="color:#c0c5ce;">      log.Fatal(err)
+</span><span style="color:#c0c5ce;">  }
+</span><span style="color:#c0c5ce;">}
+</span></code></pre>
+<br>
+<h2>Ignoring Errors</h2>
+<p>In <a href="https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#shortcuts-for-panic-on-error-unwrap-and-expect">Rust</a> we can gracefully ignore errors in two ways.  The first is with <code>unwrap()</code> where the error is ignored and we assume it's safe.  Ideally you will want to use <code>expect()</code> so if you do have a panic you can at least describe the panic.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">use std::fs::File;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">fn main() {
+</span><span style="color:#c0c5ce;">    // Unwrap method panics on error, ungraceful
+</span><span style="color:#c0c5ce;">    let greeting_file = File::open(&quot;hello.txt&quot;).unwrap();
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">    // Expect method panics on error, but a little more gracefully
+</span><span style="color:#c0c5ce;">    let greeting_file = File::open(&quot;hello.txt&quot;)
+</span><span style="color:#c0c5ce;">        .expect(&quot;hello.txt should be included in this project&quot;);
+</span><span style="color:#c0c5ce;">}
+</span></code></pre>
+<p>In <a href="https://go.dev/blog/error-handling-and-go">Golang</a> we can <em>&quot;gracefully&quot;</em> ignore errors as well.  This is done by either not assigning the <code>err</code> variable or assigning the <code>error</code> response to <code>_</code>.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">func main() {
+</span><span style="color:#c0c5ce;">  f, _ := os.Open(&quot;hello.txt&quot;)
+</span><span style="color:#c0c5ce;">}
+</span></code></pre>
+<br>
+<hr>
+<img src="/assets/posts/golang-to-rust-animorphs.png" alt="An animorphs book cover of the go gopher turning into the rust rustacean">
+      </div>
+      <div class="side-bar">
+        <h3>More Projects</h3>
+        <ul>
+        
+          
+            <li><a href="/projects/2023/from-go-to-rust">From Go to Rust</a></li>
+          
+        
+          
+            <li><a href="/projects/2023/portanoia">Portanoia Retro</a></li>
+          
+        
+          
+            <li><a href="/projects/2023/sushi-phish">Sushi Phish Tool Retro</a></li>
+          
+        
+          
+            <li><a href="/projects/2023/static-site">Custom CMS vs Static Site</a></li>
+          
+        
+          
+        
+      </ul>
+      </div>
+    </div>
+    <footer>
+    <div>
+      <h2>PROGRAMMING</h2>
+      <ul>
+        <li><a href="https://github.com/0x4445565a" target="_blank" rel="nofollow">GITHUB</a></li>
+        <li><a href="https://www.codewars.com/users/0x4445565A" target="_blank" rel="nofollow">CODEWARS</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>EXTERNAL PROJECTS</h2>
+      <ul>
+        <li><a href="https://foursuits.co/roguesvillage" target="_blank" rel="nofollow">Rogues Village @ DEFCON</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>DOES ANYONE</h2>
+      <ul>
+        <li>Actually</li>
+        <li>Ever Read</li>
+        <li>The Footer</li>
+      </ul>
+    </div>
+  </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="/assets/js/jquery.raptorize.1.0.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+
+    var x = document.getElementById("editor");
+    x.querySelector(".editor-body pre").innerHTML = x.querySelector(".editor-body pre").innerHTML.replace("RESUME_LINK", "<a href=/resume.pdf target=_blank>resume.pdf</a>");
+
+    let minElement = document.getElementById("minimize-button");
+    minElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    let maxElement = document.getElementById("maximize-button");
+    maxElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    $('.editor-header .editor-ui .close').raptorize();
+  });
+</script>
+<script src="/assets/js/navigation.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("editor").classList.toggle("minimize");
+      });
+    </script>
+  </body>
+</html>

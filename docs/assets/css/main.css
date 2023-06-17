@@ -340,8 +340,18 @@ footer a:hover {
     display: flex;
 }
 
-.post-content p {
-    padding: 1em 0;
+.post-content ul {
+    margin-left: 2.5rem;
+}
+
+.post-content p,
+.post-content h4 {
+    padding: 1rem 0;
+    font-size: 1.3rem;
+}
+
+.post-content a {
+    font-size: 1.2rem;
 }
 
 .post-content .content {
@@ -366,6 +376,7 @@ footer a:hover {
 .post-content pre {
     padding: 2em;
     margin: 1.5em 0;
+    border-radius: 5px;
 }
 
 .post-content code {
@@ -381,10 +392,12 @@ footer a:hover {
 
 .post-content .side-bar ul {
     padding: 0 2em;
+    margin-left: 0;
 }
 
 .posts {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     padding-top: 2em;
     position: relative;
@@ -400,6 +413,8 @@ footer a:hover {
     overflow: hidden;
     background: #8FA396;
     z-index: -2;
+    margin: 1rem .5rem;
+    min-width: 400px;
 }
 
 .posts article h1,
