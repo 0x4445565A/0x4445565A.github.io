@@ -153,7 +153,7 @@
 </span><span style="color:#c0c5ce;">        .expect(&quot;hello.txt should be included in this project&quot;);
 </span><span style="color:#c0c5ce;">}
 </span></code></pre>
-<p>In <a href="https://go.dev/blog/error-handling-and-go">Golang</a> we can <em>&quot;gracefully&quot;</em> ignore errors as well.  This is done by either not assigning the <code>err</code> variable or assigning the <code>error</code> response to <code>_</code>.</p>
+<p>In <a href="https://go.dev/blog/error-handling-and-go">Golang</a> we can <em>&quot;gracefully&quot;</em> ignore errors as well.  This is done by either not assigning the <code>err</code> variable or assigning the <code>error</code> response to <code>_</code>.  However this will allow the program to continue and introduce unexpected behaviors.  It is also easy to miss capturing errors by functions that only return a single <code>error</code> in their response.</p>
 <pre style="background-color:#2b303b;">
 <code><span style="color:#c0c5ce;">func main() {
 </span><span style="color:#c0c5ce;">  f, _ := os.Open(&quot;hello.txt&quot;)

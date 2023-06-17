@@ -73,7 +73,7 @@ fn main() {
 }
 ```
 
-In [Golang](https://go.dev/blog/error-handling-and-go) we can _"gracefully"_ ignore errors as well.  This is done by either not assigning the `err` variable or assigning the `error` response to `_`.
+In [Golang](https://go.dev/blog/error-handling-and-go) we can _"gracefully"_ ignore errors as well.  This is done by either not assigning the `err` variable or assigning the `error` response to `_`.  However this will allow the program to continue and introduce unexpected behaviors.  It is also easy to miss capturing errors by functions that only return a single `error` in their response.
 ```
 func main() {
   f, _ := os.Open("hello.txt")
