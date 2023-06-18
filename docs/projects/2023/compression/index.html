@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compression Tool</title>
+    <meta charset="utf-8">
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+  </head>
+  <body>
+    <nav>
+    <div class="navbar">
+      <div class="nav-container">
+        <input
+          class="checkbox"
+          type="checkbox"
+          name=""
+          id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <div class="logo">
+          <a href="/"><h1>DEV. HACKER. WEIRDO.</h1></a>
+        </div>
+        <div class="menu-items">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+          <li>
+            <a href="/projects">PROJECTS</a>
+          </li>
+          <li>
+            <a href="/resume.pdf">RESUME</a>
+          </li>
+          <li>
+            <a href="https://github.com/0x4445565a" target="_blank" rel="nofollow">GITHUB</a>
+          </li>
+          <li>
+            <a href="https://www.codewars.com/users/0x4445565A" target="_blank" rel="nofollow">CODEWARS</a>
+          </li>
+          <li>
+            <a href="#">LINKEDIN</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <main>
+    <div id="editor">
+      <div class="editor-header">
+        <div class="editor-ui">
+          <div class="ui-button close"></div>
+          <div class="ui-button minimize" id="minimize-button"></div>
+          <div class="ui-button maximize" id="maximize-button"></div>
+        </div>
+        ~/About.json
+      </div>
+      <div class="editor-body">
+        <pre>
+# A quick rundown of current information
+{
+  about: """
+  I'm Brandon Martinez a Sr. software engineer who specializes in ETL pipelines, system tools, and highly availiblty services.  My favorite projects usually involve creating tools for other developers.  I have a passion for low level tech and efficiency.
+  """,
+  resume: "RESUME_LINK",
+  contact: [
+    "brandon@ibreak.systems"
+  ],
+  strong_skills: [
+    "golang",
+    "python",
+    "linux",
+    "bash",
+    "offensive security"
+  ],
+  learning: [
+    "rust",
+  ],
+  minor_skills: [
+    "electronics engineering",
+    "fusion 360",
+    "3D Printing/CNC"
+  ]
+}
+        </pre>
+        <div class="editor-scroll">
+          <div class="editor-scroll-scrub"></div>
+        </div>
+      </div>
+      <div class="editor-footer"></div>
+    </div>
+  </main>
+    <div class="post-content">
+      <div class="content">
+        <h1>Compression Tool Mental Stress Test</h1>
+<p>-- See project <a href="https://github.com/0x4445565A/compress" target="_blank" rel="noopener noreferrer nofollow">here</a></p>
+<p>Whenever I learn a new language I will read and watch everything I can on that programming language.  Once the language's syntax is not complete gibberish to me I will give it a test project.  Rust is no different!</p>
+<p>I have been working through the analogue version of the <a href="https://doc.rust-lang.org/book/">Rust Programming Book</a> in addition to some online courses.  I decided it was time for me to stress test my understanding of Rust.</p>
+<h2>Order of Operations</h2>
+<p>I knew how roughly how I wanted to approach the projects iterations.  This was my approach...</p>
+<ul>
+<li>Compress a string using GZIP</li>
+<li>Compress STDIN using GZIP</li>
+<li>Decompress from STDIN using GZIP</li>
+<li>Add CLI flags to decompress</li>
+<li>Rewrite to support different compression algorithms</li>
+<li>Add flags to choose algorithm</li>
+<li>Add github workflow release pipeline (just for fun)</li>
+</ul>
+<h1>Challenges</h1>
+<p>Given my Rust inexperience I expected to encounter challenges in every step.  This is why my project was created in an iterative process. I ended up with many small problems, which is preferable to a handful of very tough problems.  Larger problems, in my experience, feel like brick walls instead of boundaries to overcome, this is detrimental to any learning experience.</p>
+<h2>Using External Crates</h2>
+<p>This part wasn't too difficult, but in order to get past this I had to navigate using external crates for the first time, digging through examples, and handling basic Rust project configuration.  I imagine that this will get easier the more I build projects.  Overall, an easy and educational wall to get over.</p>
+<h2>Learning STDIN</h2>
+<p>In Golang I am very used to the reader writer interface, I attempted to follow a similar structure in Rust but that strategy had to quickly be abandoned.  Digging into the <code>Flate2</code> crate I was able to take advantage of the <code>examples</code> directory standard in Rust to get a quick copy and paste example.  In this project I was trying to avoid going to StackOverflow/Rust Communities.</p>
+<h2>Clap Crate Confusion</h2>
+<p>In trying to implement flags I really wanted to avoid using the system args library.  It's boring and a little ugly.  That's when the <code>Clap</code> crate came to play.  I was quickly able to add a flag for compressing and decompressing.</p>
+<h2>Clap Enums</h2>
+<p>In preparation of supporting multiple compression types I wanted to add a CLI flag to support algorithms.  I could have just used a string or a number but I decided I was going to be extra cool and dust off <code>enums</code>!  I quickly learned that Clap <em>does</em> support enums but it would only be after a fight with traits.  This would be a common theme from this point forward.  In addition to the algorithm selector I also wanted to show the usage help if no STDIN was present.  This resulted in lots of digging into clap.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">fn main() -&gt; io::Result&lt;()&gt; {
+</span><span style="color:#c0c5ce;">    let args = Args::parse();
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">    if atty::is(atty::Stream::Stdin) {
+</span><span style="color:#c0c5ce;">        use clap::CommandFactory;
+</span><span style="color:#c0c5ce;">        let mut cmd = Args::command();
+</span><span style="color:#c0c5ce;">        cmd.print_help()?;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">        println!(&quot;Requires STDIN... Nothing found&quot;);
+</span><span style="color:#c0c5ce;">        return Ok(());
+</span><span style="color:#c0c5ce;">    }
+</span><span style="color:#c0c5ce;">    // -- snip --
+</span></code></pre>
+<img src="/assets/posts/compress-usage.png">
+<h2>Generic Traits vs Golang Interfaces</h2>
+<p>This was probably this biggest time sink in this whole project.  It involved reading many articles and hours of experimentation.  At a concept level I understood how to implement this, specifically how I would write it in Golang.  Unfortunately for me this wasn't like Golang and was not like the basic trait examples in Rust.  The project became more difficult because I was trying to add a trait to a foreign struct that already had implemented a different trait that accepted a generic.  This was several layers deeper and more complex than I was ever expecting to run into.  I tried all kinds of different forms (see below).  Finally I landed on the last one.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">impl Method for GzEncoder
+</span><span style="color:#c0c5ce;">impl Method for GzEncoder&lt;W&gt;
+</span><span style="color:#c0c5ce;">impl Method for GzEncoder&lt;dyn Write&gt;
+</span><span style="color:#c0c5ce;">impl&lt;W: Write&gt; Method&lt;W&gt; for GzEncoder&lt;W&gt;
+</span><span style="color:#c0c5ce;">impl Method for GzEncoder&lt;Vec&lt;u8&gt;&gt;
+</span></code></pre>
+<h2>Borrow Traits and Boxes</h2>
+<p>Once the trait was finally working I ran into an issue when adding multiple compression types.  This is because I had a <code>match</code> that I hoped would return a struct that implemented my trait.  I then wanted to use the returned struct in my STDIN work to compress/decompress, however Rust was very unhappy that the first case returned a <code>GzEncoder</code> and the second returned <code>ZLibEncoder</code>.  While they both have the <code>Method</code> trait they were not the same struct and this was a problem.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">  pub fn compress(&amp;self) -&gt; impl Method {
+</span><span style="color:#c0c5ce;">      match self {
+</span><span style="color:#c0c5ce;">          Self::GZIP =&gt; GzEncoder::new(Vec::new(), Compression::default()),
+</span><span style="color:#c0c5ce;">          // -- Snip --
+</span><span style="color:#c0c5ce;">      }
+</span><span style="color:#c0c5ce;">  }
+</span></code></pre>
+<p>After banging my head against the wall I realized I should use a <code>Box&lt;dyn Method&gt;</code> type.  I felt like a genius, I wrote the code at the speed of light.  I have unlocked the final frontier of Rust.  Nothing can stop me!</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">error[E0161]: cannot move a value of type `dyn Method`
+</span></code></pre>
+<p>Clearly I didn't understand <code>Box</code> as much as I thought I did.  Digging into this issue I realized you can't pass ownership the value in the <code>Box</code> so when I call the internal method <code>self.finish()</code> in the trait implementation the compiler becomes unhappy.  To resolve this I refactored my code, I created a default function in the trait.  This allowed me to do all the STDIN work once and not have to worry about passing ownership.  Instead of my <code>match</code> returning <code>Box&lt;dyn Method&gt;</code> or <code>impl Method</code> I just trigger <code>run()</code> on the appropriate compression algorithm and get my <code>Vec&lt;u8&gt;</code>.  Success!</p>
+<h1>Conclusion</h1>
+<p>This was a solid project that resulted in a pretty cool CLI tool that I might actually use.  The biggest challenge was making my code generic in an attempt to reduce overhead.  With that one requirement I made this project a lot harder than I thought it would be.  I would like to continue to update this project and add tests and remove leaning so hard on STDIN, it would be nicer to allow for different inputs like a file, string, or STDIN.  For now I'm content.</p>
+
+      </div>
+      <div class="side-bar">
+        <h3>More Projects</h3>
+        <ul>
+        
+          
+            <li><a href="/projects/2023/compression">Compression Tool</a></li>
+          
+        
+          
+            <li><a href="/projects/2023/from-go-to-rust">From Go to Rust</a></li>
+          
+        
+          
+            <li><a href="/projects/2023/portanoia">Portanoia Retro</a></li>
+          
+        
+          
+            <li><a href="/projects/2023/sushi-phish">Sushi Phish Tool Retro</a></li>
+          
+        
+          
+            <li><a href="/projects/2023/static-site">Custom CMS vs Static Site</a></li>
+          
+        
+          
+        
+      </ul>
+      </div>
+    </div>
+    <footer>
+    <div>
+      <h2>PROGRAMMING</h2>
+      <ul>
+        <li><a href="https://github.com/0x4445565a" target="_blank" rel="nofollow">GITHUB</a></li>
+        <li><a href="https://www.codewars.com/users/0x4445565A" target="_blank" rel="nofollow">CODEWARS</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>EXTERNAL PROJECTS</h2>
+      <ul>
+        <li><a href="https://foursuits.co/roguesvillage" target="_blank" rel="nofollow">Rogues Village @ DEFCON</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>DOES ANYONE</h2>
+      <ul>
+        <li>Actually</li>
+        <li>Ever Read</li>
+        <li>The Footer</li>
+      </ul>
+    </div>
+  </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="/assets/js/jquery.raptorize.1.0.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+
+    var x = document.getElementById("editor");
+    x.querySelector(".editor-body pre").innerHTML = x.querySelector(".editor-body pre").innerHTML.replace("RESUME_LINK", "<a href=/resume.pdf target=_blank>resume.pdf</a>");
+
+    let minElement = document.getElementById("minimize-button");
+    minElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    let maxElement = document.getElementById("maximize-button");
+    maxElement.addEventListener("click", function() {
+      document.getElementById("editor").classList.toggle("minimize");
+    });
+    $('.editor-header .editor-ui .close').raptorize();
+  });
+</script>
+<script src="/assets/js/navigation.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("editor").classList.toggle("minimize");
+      });
+    </script>
+  </body>
+</html>
