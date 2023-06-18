@@ -18,7 +18,7 @@ Whenever I learn a new language I will read and watch everything I can on that p
 I have been working through the analogue version of the [Rust Programming Book](https://doc.rust-lang.org/book/) in addition to some online courses.  I decided it was time for me to stress test my understanding of Rust.
 
 ## Order of Operations
-I knew how roughly how I wanted to approach the projects iterations.  This was my approach...
+I knew roughly how I wanted to approach the projects iterations.  This was my approach...
   - Compress a string using GZIP
   - Compress STDIN using GZIP
   - Decompress from STDIN using GZIP
