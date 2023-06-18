@@ -8,7 +8,7 @@ data:
   hide: false
   tags: Rust, Compression
   summary: A simple CLI tool to strain my rust knowledge.
-  img: assets/posts/img/test.png
+  img: assets/posts/img/compress.png
 ---
 # Compression Tool Mental Stress Test
 -- See project <a href="https://github.com/0x4445565A/compress" target="_blank" rel="noopener noreferrer nofollow">here</a>
