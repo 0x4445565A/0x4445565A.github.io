@@ -8,7 +8,7 @@ data:
   hide: false
   tags: Rust, Go
   summary: An ongoing journey about learning rust.
-  img: assets/posts/img/golang-rust.png
+  img: /assets/posts/img/golang-rust.png
 ---
 # From Go To Rust (Work In Progress)
 I'm a long time gopher trying to become a rustacean.  This article is an attempt to document the patterns I learn, differences I spot, and maybe to compare an idiom or two.  This is mainly for my own reference but if the odd rust newbie stumbles upon this article, hello and welcome!
