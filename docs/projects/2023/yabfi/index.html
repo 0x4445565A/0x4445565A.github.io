@@ -101,12 +101,12 @@
         <h1>Yet Another Brain F*ck Interpreter</h1>
 <p>-- See project <a href="https://github.com/0x4445565A/yabfi" target="_blank" rel="noopener noreferrer nofollow">here</a></p>
 <img src="/assets/posts/yabfi-hello-world.png">
-<h2>What is BF</h2>
-<p>Brain F*ck, also known as BF and brain-lang, is an esoteric programming language.  If you are unfamiliar <a href="https://www.youtube.com/watch?v=hdHjjBS4cs8" target="_blank" rel="noopener noreferrer nofollow">this video</a> is a great primer. Its syntax is so simple, with only 8 symbols <code>+-[].,&gt;&lt;</code>, but in its simplicity it becomes almost unusable.  At its core BF has a static sized buffer.  This buffer stores a byte, initialized with 0.  To interact with the buffer you use <code>+-</code> to increment and decrement the buffer at the current pointer. <code>&gt;&lt;</code> shifts the pointer to the right and left. <code>.</code> prints the current value at the pointer as an ascii character. <code>,</code> requests a number from STDIN and places it in the pointer position.</p>
-<h2>What is YABFI</h2>
+<h2>What is BF?</h2>
+<p>Brain F*ck, also known as BF and brain-lang, is an esoteric programming language.  If you are unfamiliar <a href="https://www.youtube.com/watch?v=hdHjjBS4cs8" target="_blank" rel="noopener noreferrer nofollow">this video</a> is a great primer. With only 8 symbols <code>+-[].,&gt;&lt;</code> the language is deceptively simple, almost unusable.  At its core BF has a static sized buffer.  This buffer stores a byte, initialized with 0.  To interact with the buffer you use <code>+-</code> to increment and decrement the buffer at the current pointer. <code>&gt;&lt;</code> shifts the pointer to the right and left. <code>.</code> prints the current value at the pointer as an ascii character. <code>,</code> requests a number from STDIN and places it in the pointer position.</p>
+<h2>What is YABFI?</h2>
 <p>Yet Another Brain F*ck Interpreter is just another interpreter for BF, written in Rust.  While the world didn't need ANOTHER Rust powered BFI, I really wanted to write one.  I figured since I'm still learning Rust it would make for another awesome project.</p>
 <h2>Constraints</h2>
-<p>As will all of my projects I started with constraints and project steps.  The constraints were as follows..</p>
+<p>As will all of my projects I started with constraints and project steps.  The constraints were as follows...</p>
 <ul>
 <li>Accepts common BF code and print the expected result</li>
 <li>Accepts BF code from STDIN</li>
@@ -114,7 +114,7 @@
 <li>Has extra features to make the CLI interpreter environment easier to use</li>
 </ul>
 <h2>Challenges</h2>
-<p>Ultimately this project went by super smoothly.  Brain-lang is very well documented, however I avoided looking at anyone's code so I could keep the challenge.</p>
+<p>Ultimately this project went smoother than I expect, because Brain-lang is very well documented. So to not spoil the fun I avoided looking at other BFI implementations.</p>
 <p>The first issue I ran into was supporting wrap around addition and subtraction.  In BF if I execute <code>0-1</code> it should return 255, which does not play well with Rust's <code>u8</code> type, it immediately throws an overflow error.  So I considered switching to <code>i16</code> to abuse the signed bit, but there were many issues with this and the Rust compile caught me out.  After digging through the Rust docs I found <code>wrapping_add()</code> (<a href="https://doc.rust-lang.org/std/primitive.u8.html#method.wrapping_add" target="_blank" rel="noopener noreferrer nofollow">Read more here</a>).  This allows me to do that math but ignore the carrying digit.  Additionally the <code>wrapping_sub()</code> does the same for me going in the opposite direction.</p>
 <p>The final challenge was figuring out how to handle the loops.  BF Loops are pretty simple.  When you encounter a <code>[</code> if the current pointer value is <code>0</code> you skip to the matching <code>]</code>.  When you encounter a <code>]</code> you jump back to the matching <code>[</code>.  The way I handled this was actually pretty simple.</p>
 <p>I do this with a single <code>Vec&lt;usize&gt;</code>.  All I do it I <code>push()</code> the program cursor position to the stack when I see a <code>[</code>.  When I see a <code>]</code> I <code>pop()</code> the loop stack and store that.  If the <code>buf[pointer]</code> value is <code>0</code> I move forward exiting the loop otherwise I skip the cursor back the popped value.  The stack of course is so I can have multiple nested loops and keep track of them all.</p>
