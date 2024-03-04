@@ -30,8 +30,8 @@
 			}
 
 			//Raptor Vars
-			var raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/assets/raptor/raptor.png" />'
-			var raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/assets/raptor/raptor-sound.mp3" /><source src="/assets/raptor/raptor-sound.ogg" /></audio>';
+			var raptorImageMarkup = '<img id="elRaptor" style="display: none" src="https://ibreak.systems/assets/raptor/raptor.png" />'
+			var raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="https://ibreak.systems/assets/raptor/raptor-sound.mp3" /><source src="https://ibreak.systems/assets/raptor/raptor-sound.ogg" /></audio>';
 			var locked = false;
 
 			//Append Raptor and Style
