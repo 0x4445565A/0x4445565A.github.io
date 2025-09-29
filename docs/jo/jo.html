@@ -1,8 +1,16 @@
 
 <HTML>
-<head><title>THE MARTINEZ FAMILY</title><script type='text/javascript' src='https://www.midijs.net/lib/midi.js'></script><script>
+<head><title>THE MARTINEZ FAMILY</title><script type='text/javascript' src='https://www.midijs.net/lib/midi.js'></script>
+<script>
+var started = false;
 document.addEventListener('DOMContentLoaded', function() {
-   MIDIjs.play('ode_to_my_family_1_.mid');
+   window.addEventListener('scroll', () => {
+     if (!started) {
+          started = true;
+          MIDIjs.play('ode_to_my_family_1_.mid');
+     }
+   });
+   
 }); 
 </script></head><!--'"</title></head>-->
 
